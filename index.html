@@ -412,13 +412,24 @@
             'sim': {
                 title: "Dynamic Graph-Based Epidemic Simulation",
                 content: `
-<p>Modeling infection spread among 8 moving vehicles using graph theory and C.</p>
-<h4>Key Algorithms</h4>
+<p><strong>Context:</strong> An academic capstone project modeling malware propagation across dynamic Vehicle-to-Vehicle (V2V) networks using C and Graph Theory.</p>
+
+<h4>Algorithmic Implementation</h4>
+<p>Built a custom simulation engine that models network topology changes in real-time:</p>
 <ul>
-<li>Implemented <strong>dynamic adjacency matrix</strong> updates based on proximity detection.</li>
-<li>Designed <strong>probabilistic disease transmission</strong> algorithms based on contact duration.</li>
-<li>Automated <strong>GraphViz export</strong> for 120-timestep visualization of the contagion network.</li>
+<li><strong>Dynamic Adjacency Matrix:</strong> Implemented an algorithm that recalculates graph edges every timestep ($O(N^2)$) based on Euclidean distance and a configurable <code>DANGER_RADIUS</code>.</li>
+<li><strong>Probabilistic Transmission:</strong> Designed a stochastic infection logic where edge weights represent transmission probability (set to 0.55), simulating realistic "Infection Waves."</li>
+<li><strong>State Management:</strong> Modeled vehicles using a custom struct to track position, velocity, and S.I.R. (Susceptible, Infected, Recovered) states.</li>
 </ul>
+
+<h4>Visualization & Data</h4>
+<p>The system automates the generation of <strong>GraphViz (.dot)</strong> files for each of the 120 timesteps, allowing for the visual analysis of:
+<ul>
+<li>Propagation clusters and community detection.</li>
+<li>The "Backbone" of infection spread across moving nodes.</li>
+</ul>
+</p>
+
 <div class="modal-links">
 <a href="https://github.com/Abderrahmane-Fouzi-ABOUZAID/V2V-cyberattack-simulation-using-graphs" target="_blank" class="btn-outline">View Repository ↗</a>
 </div>
