@@ -39,7 +39,9 @@
         ul { list-style: none; }
 
         /* --- UTILITIES --- */
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+        /* Changed max-width to 1200px to prevent header overlapping */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        
         .section-title {
             display: flex;
             align-items: center;
@@ -81,16 +83,22 @@
             border-bottom: 1px solid rgba(100, 255, 218, 0.1);
         }
         nav { display: flex; justify-content: space-between; align-items: center; }
+        
         .logo { 
-            font-size: 1.2rem; color: var(--accent); font-weight: bold; 
-            border: 1px solid var(--accent); padding: 5px 10px;
+            font-size: 1.1rem; /* Slightly adjusted size */
+            color: var(--accent); 
+            font-weight: bold; 
+            border: 1px solid var(--accent); 
+            padding: 5px 10px;
+            white-space: nowrap; /* Prevents name from breaking into two lines */
         }
         .logo:hover { background: rgba(100,255,218,0.1); }
+        
         .nav-links { display: flex; gap: 30px; font-size: 0.85rem; }
         .nav-links a:hover { color: var(--accent); }
         .nav-links span { color: var(--accent); }
 
-        /* --- INTERNSHIP STATUS BADGE (UPDATED) --- */
+        /* --- INTERNSHIP STATUS BADGE --- */
         .status-badge {
             display: inline-flex;
             align-items: center;
@@ -158,16 +166,16 @@
         .skill-item::before { content: "▹"; color: var(--accent); margin-right: 10px; }
         .skill-item:hover { transform: translateY(-3px); color: var(--accent); }
 
-        /* --- PROJECT CARDS (NOW CLICKABLE) --- */
+        /* --- PROJECT CARDS --- */
         .project-card {
-            display: block; /* Makes the anchor tag behave like a block div */
+            display: block; 
             background-color: var(--bg-light); 
             border-radius: 6px; 
             padding: 2rem; 
             margin-bottom: 2rem;
             transition: var(--transition); 
             border: 1px solid transparent;
-            text-decoration: none !important; /* Removes underline from the whole card */
+            text-decoration: none !important; 
         }
         .project-card:hover { 
             transform: translateY(-5px); 
@@ -179,7 +187,7 @@
         .folder-icon { width: 40px; height: 40px; stroke: var(--accent); }
         
         .project-card h3 { color: var(--text-main); font-size: 1.4rem; margin-bottom: 10px; }
-        .project-card:hover h3 { color: var(--accent); } /* Highlight title on hover */
+        .project-card:hover h3 { color: var(--accent); } 
         
         .project-desc { color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem; }
         .project-bullets { list-style: none; margin-bottom: 20px; }
@@ -206,7 +214,8 @@
 
     <header>
         <div class="container nav">
-                <a href="#" class="logo">Abderrahmane Fouzi ABOUZAID</a><br>
+            <a href="#" class="logo">Abderrahmane Fouzi ABOUZAID</a>
+            
             <div class="nav-links">
                 <a href="#achievements"><span>01.</span> Highlights</a>
                 <a href="#about"><span>02.</span> About</a>
