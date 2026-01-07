@@ -16,7 +16,7 @@
             --accent: #64ffda;         /* Neon Cyber Green */
             --text-main: #ccd6f6;      /* Light Slate */
             --text-muted: #8892b0;     /* Slate */
-            --glass: rgba(10, 25, 47, 0.85);
+            --glass: rgba(10, 25, 47, 0.95); /* Slightly darker glass for better contrast */
             --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
         }
 
@@ -39,9 +39,15 @@
         ul { list-style: none; }
 
         /* --- UTILITIES --- */
-        /* Changed max-width to 1200px to prevent header overlapping */
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
         
+        /* Special Fluid Container for Header to ensure name is at far left */
+        .container-fluid { 
+            width: 100%; 
+            padding: 0 40px; /* More padding on edges */
+            margin: 0 auto; 
+        }
+
         .section-title {
             display: flex;
             align-items: center;
@@ -82,15 +88,21 @@
             padding: 20px 0;
             border-bottom: 1px solid rgba(100, 255, 218, 0.1);
         }
-        nav { display: flex; justify-content: space-between; align-items: center; }
+        
+        /* FIXED: Now targeting the <nav> element correctly */
+        nav { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
         
         .logo { 
-            font-size: 1.1rem; /* Slightly adjusted size */
+            font-size: 1.1rem; 
             color: var(--accent); 
             font-weight: bold; 
             border: 1px solid var(--accent); 
             padding: 5px 10px;
-            white-space: nowrap; /* Prevents name from breaking into two lines */
+            white-space: nowrap; /* Forces name to stay on one line */
         }
         .logo:hover { background: rgba(100,255,218,0.1); }
         
@@ -213,7 +225,7 @@
 <body>
 
     <header>
-        <div class="container nav">
+        <nav class="container-fluid">
             <a href="#" class="logo">Abderrahmane Fouzi ABOUZAID</a>
             
             <div class="nav-links">
@@ -223,7 +235,7 @@
                 <a href="#projects"><span>04.</span> Projects</a>
                 <a href="#contact"><span>05.</span> Contact</a>
             </div>
-        </div>
+        </nav>
     </header>
 
     <main class="container">
