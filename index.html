@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A.F. ABOUZAID | Available for Internship</title>
+    <title>A.F. ABOUZAID | Internship 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -90,7 +90,7 @@
         .nav-links a:hover { color: var(--accent); }
         .nav-links span { color: var(--accent); }
 
-        /* --- NEW: INTERNSHIP STATUS BADGE --- */
+        /* --- INTERNSHIP STATUS BADGE (UPDATED) --- */
         .status-badge {
             display: inline-flex;
             align-items: center;
@@ -98,9 +98,10 @@
             color: var(--accent);
             padding: 8px 16px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             margin-bottom: 20px;
             border: 1px solid rgba(100, 255, 218, 0.3);
+            letter-spacing: 0.5px;
         }
         .status-dot {
             width: 8px;
@@ -157,18 +158,29 @@
         .skill-item::before { content: "▹"; color: var(--accent); margin-right: 10px; }
         .skill-item:hover { transform: translateY(-3px); color: var(--accent); }
 
-        /* --- PROJECT CARDS --- */
+        /* --- PROJECT CARDS (NOW CLICKABLE) --- */
         .project-card {
-            background-color: var(--bg-light); border-radius: 6px; padding: 2rem; margin-bottom: 2rem;
-            transition: var(--transition); border: 1px solid transparent;
+            display: block; /* Makes the anchor tag behave like a block div */
+            background-color: var(--bg-light); 
+            border-radius: 6px; 
+            padding: 2rem; 
+            margin-bottom: 2rem;
+            transition: var(--transition); 
+            border: 1px solid transparent;
+            text-decoration: none !important; /* Removes underline from the whole card */
         }
-        .project-card:hover { transform: translateY(-5px); border-color: rgba(100, 255, 218, 0.3); box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7); }
+        .project-card:hover { 
+            transform: translateY(-5px); 
+            border-color: rgba(100, 255, 218, 0.3); 
+            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7); 
+            cursor: pointer;
+        }
         .project-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
         .folder-icon { width: 40px; height: 40px; stroke: var(--accent); }
-        .project-links a { stroke: var(--text-muted); margin-left: 10px; }
-        .project-links a:hover { stroke: var(--accent); }
         
         .project-card h3 { color: var(--text-main); font-size: 1.4rem; margin-bottom: 10px; }
+        .project-card:hover h3 { color: var(--accent); } /* Highlight title on hover */
+        
         .project-desc { color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem; }
         .project-bullets { list-style: none; margin-bottom: 20px; }
         .project-bullets li { position: relative; padding-left: 20px; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; }
@@ -212,7 +224,7 @@
                 
                 <div class="status-badge">
                     <div class="status-dot"></div>
-                    Available for Internship 2026
+                    Available for 3-4 Month Internship (Starting June 2026)
                 </div>
 
                 <p class="intro">Hi, my name is</p>
@@ -259,7 +271,7 @@
                     Beyond technical skills, I thrive in competitive environments. My track record in CTFs and Consulting Games demonstrates my ability to solve complex problems under pressure.
                 </p>
                 <p style="border-left: 2px solid var(--accent); padding-left: 15px; color: var(--text-main);">
-                    <strong>Current Status:</strong> I am actively seeking an <span style="color: var(--accent)">End-of-Studies Internship (PFE) starting February 2026</span>. I am eager to contribute to teams working on cybersecurity infrastructure, backend systems, or high-performance software engineering.
+                    <strong>Current Status:</strong> I am actively seeking a <span style="color: var(--accent)">3 to 4-month Internship starting June 2026</span>. I am eager to contribute to teams working on cybersecurity infrastructure, backend systems, or high-performance software engineering.
                 </p>
             </div>
         </section>
@@ -297,12 +309,11 @@
 
         <section id="projects" style="padding: 60px 0;">
             <h2 class="section-title"><span>04.</span> Featured Projects</h2>
-            <div class="project-card">
+
+            <a href="https://github.com/Abderrahmane-Fouzi-ABOUZAID/Medisphere" target="_blank" class="project-card">
                 <div class="project-top">
                     <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" /></svg>
-                    <div class="project-links">
-                        <a href="#" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
-                    </div>
+                    <div style="color: var(--accent); font-size: 0.9rem;">View Repository ↗</div>
                 </div>
                 <h3>Medisphere – Healthcare Management System</h3>
                 <p class="project-desc">A full-stack application designed to manage users, data, and authentication securely at scale.</p>
@@ -317,13 +328,12 @@
                     <span class="mono">Nuxt.js</span>
                     <span class="mono">Maven</span>
                 </div>
-            </div>
-            <div class="project-card">
+            </a>
+
+            <a href="https://github.com/Abderrahmane-Fouzi-ABOUZAID/V2V-cyberattack-simulation-using-graphs" target="_blank" class="project-card">
                 <div class="project-top">
                     <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" /></svg>
-                    <div class="project-links">
-                        <a href="#" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
-                    </div>
+                    <div style="color: var(--accent); font-size: 0.9rem;">View Repository ↗</div>
                 </div>
                 <h3>Dynamic Graph-Based Epidemic Simulation</h3>
                 <p class="project-desc">Modeling infection spread among 8 moving vehicles using graph theory.</p>
@@ -337,14 +347,15 @@
                     <span class="mono">Graph Theory</span>
                     <span class="mono">Algorithms</span>
                 </div>
-            </div>
+            </a>
+
         </section>
 
         <section id="contact" style="padding: 100px 0; text-align: center;">
             <p style="color: var(--accent); font-family: 'Fira Code'; margin-bottom: 20px;">05. Ready to hire?</p>
             <h2 style="font-size: 3rem; color: var(--text-main); margin-bottom: 30px;">Get In Touch</h2>
             <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 50px auto;">
-                I am actively seeking an internship opportunity. Whether you have a question or want to discuss how I can contribute to your team, my inbox is open.
+                I am actively seeking an internship opportunity (June 2026). Whether you have a question or want to discuss how I can contribute to your team, my inbox is open.
             </p>
             <div class="cta-group" style="justify-content: center;">
                 <a href="mailto:abderrhmaneabouzaid@gmail.com" class="btn-outline">✉️ Contact Me</a>
