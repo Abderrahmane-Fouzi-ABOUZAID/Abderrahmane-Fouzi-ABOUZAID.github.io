@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A.F. ABOUZAID | Internship 2026</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>A.F. ABOUZAID | Internship 2026</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+        <style>
         /* --- CORE VARIABLES --- */
         :root {
             --bg-dark: #0a192f;        /* Deep Navy */
@@ -23,7 +23,7 @@
 
         /* --- RESET & BASE --- */
         * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
-        
+
         body {
             background-color: var(--bg-dark);
             color: var(--text-main);
@@ -57,7 +57,7 @@
         body::before {
             content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background-image: linear-gradient(rgba(100, 255, 218, 0.03) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(100, 255, 218, 0.03) 1px, transparent 1px);
+                linear-gradient(90deg, rgba(100, 255, 218, 0.03) 1px, transparent 1px);
             background-size: 50px 50px; z-index: -1; pointer-events: none;
         }
 
@@ -88,9 +88,9 @@
             margin-right: 10px; box-shadow: 0 0 10px var(--accent); animation: pulse 2s infinite;
         }
         @keyframes pulse {
-            0% { opacity: 1; box-shadow: 0 0 0 0 rgba(100, 255, 218, 0.7); }
-            70% { opacity: 1; box-shadow: 0 0 0 6px rgba(100, 255, 218, 0); }
-            100% { opacity: 1; box-shadow: 0 0 0 0 rgba(100, 255, 218, 0); }
+        0% { opacity: 1; box-shadow: 0 0 0 0 rgba(100, 255, 218, 0.7); }
+        70% { opacity: 1; box-shadow: 0 0 0 6px rgba(100, 255, 218, 0); }
+        100% { opacity: 1; box-shadow: 0 0 0 0 rgba(100, 255, 218, 0); }
         }
 
         /* --- HERO --- */
@@ -99,7 +99,7 @@
         .hero-content h1 { font-size: clamp(40px, 8vw, 70px); font-weight: 600; color: var(--text-main); line-height: 1.1; margin-bottom: 10px; }
         .hero-content h2 { font-size: clamp(20px, 5vw, 40px); color: var(--text-muted); line-height: 1.2; margin-bottom: 30px; }
         .hero-content p.desc { max-width: 600px; color: var(--text-muted); margin-bottom: 50px; font-size: 1.1rem; }
-        
+
         .cta-group { display: flex; flex-wrap: wrap; gap: 15px; }
         .btn-outline {
             color: var(--accent); border: 1px solid var(--accent); padding: 14px 20px;
@@ -135,7 +135,7 @@
         }
         .project-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
         .folder-icon { width: 40px; height: 40px; stroke: var(--accent); }
-        
+
         .project-card h3 { color: var(--text-main); font-size: 1.4rem; margin-bottom: 10px; }
         .project-card:hover h3 { color: var(--accent); }
         .project-desc { color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem; }
@@ -153,7 +153,7 @@
             display: flex; align-items: center; justify-content: center;
         }
         .modal-overlay.active { opacity: 1; visibility: visible; }
-        
+
         .modal-content {
             background: var(--bg-light); width: 90%; max-width: 700px; max-height: 90vh;
             border-radius: 8px; padding: 40px; border: 1px solid var(--accent);
@@ -161,13 +161,13 @@
             box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
         .modal-overlay.active .modal-content { transform: translateY(0); }
-        
+
         .modal-close {
             position: absolute; top: 20px; right: 20px; color: var(--text-muted);
             font-size: 2rem; cursor: pointer; line-height: 1;
         }
         .modal-close:hover { color: var(--accent); }
-        
+
         .modal-body h2 { color: var(--text-main); margin-bottom: 10px; }
         .modal-body h4 { color: var(--accent); margin: 25px 0 10px 0; font-family: 'Fira Code'; font-size: 1rem; }
         .modal-body p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 10px; }
@@ -179,237 +179,250 @@
             .hero-content h1 { font-size: 40px; }
             .nav-links { display: none; }
         }
-    </style>
-</head>
-<body>
+        </style>
+    </head>
+    <body>
 
-    <header>
-        <nav class="container-fluid">
-            <a href="#" class="logo">Abderrahmane Fouzi ABOUZAID</a>
-            <div class="nav-links">
-                <a href="#achievements"><span>01.</span> Highlights</a>
-                <a href="#about"><span>02.</span> About</a>
-                <a href="#skills"><span>03.</span> Skills</a>
-                <a href="#projects"><span>04.</span> Projects</a>
-                <a href="#contact"><span>05.</span> Contact</a>
-            </div>
-        </nav>
-    </header>
-
-    <main class="container">
-        
-        <section class="hero">
-            <div class="hero-content">
-                <div class="status-badge">
-                    <div class="status-dot"></div>
-                    Available for 3-4 Month Internship (Starting June 2026)
+        <header>
+            <nav class="container-fluid">
+                <a href="#" class="logo">Abderrahmane Fouzi ABOUZAID</a>
+                <div class="nav-links">
+                    <a href="#achievements"><span>01.</span> Highlights</a>
+                    <a href="#about"><span>02.</span> About</a>
+                    <a href="#skills"><span>03.</span> Skills</a>
+                    <a href="#projects"><span>04.</span> Projects</a>
+                    <a href="#contact"><span>05.</span> Contact</a>
                 </div>
-                <p class="intro">Hi, my name is</p>
-                <h1>Abderrahmane Fouzi ABOUZAID.</h1>
-                <h2>Actively seeking End-of-Studies Internship<br> in Cybersecurity & Software Engineering.</h2>
-                <p class="desc">
-                    I build reliable systems and secure applications, combining strong theoretical foundations with hands-on problem solving.
+            </nav>
+        </header>
+
+        <main class="container">
+
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="status-badge">
+                        <div class="status-dot"></div>
+                        Available for 3-4 Month Internship (Starting June 2026)
+                    </div>
+                    <p class="intro">Hi, my name is</p>
+                    <h1>Abderrahmane Fouzi ABOUZAID.</h1>
+                    <h2>Actively seeking End-of-Studies Internship<br> in Cybersecurity & Software Engineering.</h2>
+                    <p class="desc">
+                        I build reliable systems and secure applications, combining strong theoretical foundations with hands-on problem solving.
+                    </p>
+                    <div class="cta-group">
+                        <a href="Abderrahmane-Fouzi-ABOUZAID-CV-Anglais.pdf" class="btn-outline" download>📄 Download CV</a>
+                        <a href="#contact" class="btn-outline">✉️ Contact for Internship</a>
+                        <a href="https://github.com/Abderrahmane-Fouzi-ABOUZAID" target="_blank" class="btn-outline">💼 GitHub</a>
+                        <a href="https://www.linkedin.com/in/abderrahmane-fouzi-abouzaid-250266331/" target="_blank" class="btn-outline">🔗 LinkedIn</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="achievements" style="padding: 20px 0 80px 0;">
+                <h2 class="section-title"><span>01.</span> Competition Results</h2>
+                <div class="highlight-grid">
+                    <div class="highlight-card">
+                        <span class="stat-number">2nd Place</span>
+                        <h3 class="highlight-title">Capture The Flag (CTF)</h3>
+                        <p style="color: var(--accent); font-family: 'Fira Code'; font-size: 0.8rem; margin-bottom: 10px;">1337 x Elitesec</p>
+                        <p class="highlight-desc">Ranked 2nd by solving advanced challenges in system exploitation, cryptography, and digital forensics.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="stat-number">3rd Place</span>
+                        <h3 class="highlight-title">PwC Consulting Case Game</h3>
+                        <p style="color: var(--accent); font-family: 'Fira Code'; font-size: 0.8rem; margin-bottom: 10px;">PwC x ACC Consulting</p>
+                        <p class="highlight-desc">Designed a data-driven solution for the renewable energy sector, assessed by a panel of professionals.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" style="padding: 60px 0;">
+                <h2 class="section-title"><span>02.</span> About Me</h2>
+                <div style="max-width: 800px; color: var(--text-muted);">
+                    <p style="margin-bottom: 20px;">
+                        I am a third-year Computer Science student with a strong foundation in systems, algorithms, and software engineering. I enjoy building robust, well-structured solutions — from low-level simulations in C/C++ to full-stack applications using modern web technologies.
+                    </p>
+                    <p style="margin-bottom: 20px;">
+                        Beyond technical skills, I thrive in competitive environments. My track record in CTFs and Consulting Games demonstrates my ability to solve complex problems under pressure.
+                    </p>
+                    <p style="border-left: 2px solid var(--accent); padding-left: 15px; color: var(--text-main);">
+                        <strong>Current Status:</strong> I am actively seeking a <span style="color: var(--accent)">3 to 4-month Internship starting June 2026</span>. I am eager to contribute to teams working on cybersecurity infrastructure, backend systems, or high-performance software engineering.
+                    </p>
+                </div>
+            </section>
+
+            <section id="skills" style="padding: 60px 0;">
+                <h2 class="section-title"><span>03.</span> Technical Skills</h2>
+                <h3 class="skill-category-title">Core Programming</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">C / C++</div>
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">Java</div>
+                    <div class="skill-item">JavaScript</div>
+                </div>
+                <h3 class="skill-category-title">Web & Software Engineering</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">HTML / CSS</div>
+                    <div class="skill-item">Vue.js / Nuxt.js</div>
+                    <div class="skill-item">REST APIs</div>
+                    <div class="skill-item">MVC & Design Patterns</div>
+                </div>
+                <h3 class="skill-category-title">Systems & Security</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">Linux / OS Fundamentals</div>
+                    <div class="skill-item">Cryptography Basics</div>
+                    <div class="skill-item">Web Security</div>
+                    <div class="skill-item">System Exploitation</div>
+                </div>
+                <h3 class="skill-category-title">Tools</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">Git / GitHub</div>
+                    <div class="skill-item">MySQL</div>
+                    <div class="skill-item">Maven</div>
+                </div>
+            </section>
+
+            <section id="projects" style="padding: 60px 0;">
+                <h2 class="section-title"><span>04.</span> Featured Projects</h2>
+                <p style="margin-bottom: 30px; font-family:'Fira Code'; font-size: 0.9rem; color: var(--accent);">
+                    // Click on a project to view details
                 </p>
-                <div class="cta-group">
-                    <a href="Abderrahmane-Fouzi-ABOUZAID-CV-Anglais.pdf" class="btn-outline" download>📄 Download CV</a>
-                    <a href="#contact" class="btn-outline">✉️ Contact for Internship</a>
-                    <a href="https://github.com/Abderrahmane-Fouzi-ABOUZAID" target="_blank" class="btn-outline">💼 GitHub</a>
+
+                <div class="project-card" onclick="openModal('pwc')">
+                    <div class="project-top">
+                        <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                        <div style="color: var(--accent); font-size: 0.9rem;">Strategy Roadmap</div>
+                    </div>
+                    <h3>PwC x ACC: Digital Energy Transformation</h3>
+                    <p class="project-desc">Award-winning strategic roadmap designed for a major renewable energy operator to integrate AI, IoT, and Digital Twins.</p>
+                    <div class="tech-stack">
+                        <span class="mono">Consulting</span>
+                        <span class="mono">IoT Architecture</span>
+                        <span class="mono">AI Strategy</span>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="openModal('medisphere')">
+                    <div class="project-top">
+                        <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" /></svg>
+                        <div style="color: var(--accent); font-size: 0.9rem;">View Code</div>
+                    </div>
+                    <h3>Medisphere – Healthcare System</h3>
+                    <p class="project-desc">Full-stack Java/Nuxt.js application managing users and authentication securely at scale.</p>
+                    <div class="tech-stack">
+                        <span class="mono">Java 11</span>
+                        <span class="mono">MySQL</span>
+                        <span class="mono">Nuxt.js</span>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="openModal('sim')">
+                    <div class="project-top">
+                        <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" /></svg>
+                        <div style="color: var(--accent); font-size: 0.9rem;">View Code</div>
+                    </div>
+                    <h3>Graph-Based Epidemic Simulation</h3>
+                    <p class="project-desc">C-based algorithmic simulation modeling infection spread in vehicular networks.</p>
+                    <div class="tech-stack">
+                        <span class="mono">C</span>
+                        <span class="mono">Graph Theory</span>
+                        <span class="mono">Algorithms</span>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="contact" style="padding: 100px 0; text-align: center;">
+                <p style="color: var(--accent); font-family: 'Fira Code'; margin-bottom: 20px;">05. Ready to hire?</p>
+                <h2 style="font-size: 3rem; color: var(--text-main); margin-bottom: 30px;">Get In Touch</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 50px auto;">
+                    I am actively seeking an internship opportunity (June 2026). Whether you have a question or want to discuss how I can contribute to your team, my inbox is open.
+                </p>
+                <div class="cta-group" style="justify-content: center;">
+                    <a href="mailto:abderrhmaneabouzaid@gmail.com?subject=Internship Application" class="btn-outline">✉️ Contact Me</a>
                     <a href="https://www.linkedin.com/in/abderrahmane-fouzi-abouzaid-250266331/" target="_blank" class="btn-outline">🔗 LinkedIn</a>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="achievements" style="padding: 20px 0 80px 0;">
-            <h2 class="section-title"><span>01.</span> Competition Results</h2>
-            <div class="highlight-grid">
-                <div class="highlight-card">
-                    <span class="stat-number">2nd Place</span>
-                    <h3 class="highlight-title">Capture The Flag (CTF)</h3>
-                    <p style="color: var(--accent); font-family: 'Fira Code'; font-size: 0.8rem; margin-bottom: 10px;">1337 x Elitesec</p>
-                    <p class="highlight-desc">Ranked 2nd by solving advanced challenges in system exploitation, cryptography, and digital forensics.</p>
-                </div>
-                <div class="highlight-card">
-                    <span class="stat-number">3rd Place</span>
-                    <h3 class="highlight-title">PwC Consulting Case Game</h3>
-                    <p style="color: var(--accent); font-family: 'Fira Code'; font-size: 0.8rem; margin-bottom: 10px;">PwC x ACC Consulting</p>
-                    <p class="highlight-desc">Designed a data-driven solution for the renewable energy sector, assessed by a panel of professionals.</p>
+        </main>
+
+        <div id="projectModal" class="modal-overlay" onclick="closeModal(event)">
+            <div class="modal-content">
+                <span class="modal-close" onclick="closeModal(event)">&times;</span>
+                <div id="modalBody" class="modal-body">
                 </div>
             </div>
-        </section>
-
-        <section id="about" style="padding: 60px 0;">
-            <h2 class="section-title"><span>02.</span> About Me</h2>
-            <div style="max-width: 800px; color: var(--text-muted);">
-                <p style="margin-bottom: 20px;">
-                    I am a third-year Computer Science student with a strong foundation in systems, algorithms, and software engineering. I enjoy building robust, well-structured solutions — from low-level simulations in C/C++ to full-stack applications using modern web technologies.
-                </p>
-                <p style="margin-bottom: 20px;">
-                    Beyond technical skills, I thrive in competitive environments. My track record in CTFs and Consulting Games demonstrates my ability to solve complex problems under pressure.
-                </p>
-                <p style="border-left: 2px solid var(--accent); padding-left: 15px; color: var(--text-main);">
-                    <strong>Current Status:</strong> I am actively seeking a <span style="color: var(--accent)">3 to 4-month Internship starting June 2026</span>. I am eager to contribute to teams working on cybersecurity infrastructure, backend systems, or high-performance software engineering.
-                </p>
-            </div>
-        </section>
-
-        <section id="skills" style="padding: 60px 0;">
-            <h2 class="section-title"><span>03.</span> Technical Skills</h2>
-            <h3 class="skill-category-title">Core Programming</h3>
-            <div class="skills-grid">
-                <div class="skill-item">C / C++</div>
-                <div class="skill-item">Python</div>
-                <div class="skill-item">Java</div>
-                <div class="skill-item">JavaScript</div>
-            </div>
-            <h3 class="skill-category-title">Web & Software Engineering</h3>
-            <div class="skills-grid">
-                <div class="skill-item">HTML / CSS</div>
-                <div class="skill-item">Vue.js / Nuxt.js</div>
-                <div class="skill-item">REST APIs</div>
-                <div class="skill-item">MVC & Design Patterns</div>
-            </div>
-            <h3 class="skill-category-title">Systems & Security</h3>
-            <div class="skills-grid">
-                <div class="skill-item">Linux / OS Fundamentals</div>
-                <div class="skill-item">Cryptography Basics</div>
-                <div class="skill-item">Web Security</div>
-                <div class="skill-item">System Exploitation</div>
-            </div>
-            <h3 class="skill-category-title">Tools</h3>
-            <div class="skills-grid">
-                <div class="skill-item">Git / GitHub</div>
-                <div class="skill-item">MySQL</div>
-                <div class="skill-item">Maven</div>
-            </div>
-        </section>
-
-        <section id="projects" style="padding: 60px 0;">
-            <h2 class="section-title"><span>04.</span> Featured Projects</h2>
-            <p style="margin-bottom: 30px; font-family:'Fira Code'; font-size: 0.9rem; color: var(--accent);">
-                // Click on a project to view details
-            </p>
-
-            <div class="project-card" onclick="openModal('pwc')">
-                <div class="project-top">
-                    <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                    <div style="color: var(--accent); font-size: 0.9rem;">Strategy Roadmap</div>
-                </div>
-                <h3>PwC x ACC: Digital Energy Transformation</h3>
-                <p class="project-desc">Award-winning strategic roadmap designed for a major renewable energy operator to integrate AI, IoT, and Digital Twins.</p>
-                <div class="tech-stack">
-                    <span class="mono">Consulting</span>
-                    <span class="mono">IoT Architecture</span>
-                    <span class="mono">AI Strategy</span>
-                </div>
-            </div>
-
-            <div class="project-card" onclick="openModal('medisphere')">
-                <div class="project-top">
-                    <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" /></svg>
-                    <div style="color: var(--accent); font-size: 0.9rem;">View Code</div>
-                </div>
-                <h3>Medisphere – Healthcare System</h3>
-                <p class="project-desc">Full-stack Java/Nuxt.js application managing users and authentication securely at scale.</p>
-                <div class="tech-stack">
-                    <span class="mono">Java 11</span>
-                    <span class="mono">MySQL</span>
-                    <span class="mono">Nuxt.js</span>
-                </div>
-            </div>
-
-            <div class="project-card" onclick="openModal('sim')">
-                <div class="project-top">
-                    <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" /></svg>
-                    <div style="color: var(--accent); font-size: 0.9rem;">View Code</div>
-                </div>
-                <h3>Graph-Based Epidemic Simulation</h3>
-                <p class="project-desc">C-based algorithmic simulation modeling infection spread in vehicular networks.</p>
-                <div class="tech-stack">
-                    <span class="mono">C</span>
-                    <span class="mono">Graph Theory</span>
-                    <span class="mono">Algorithms</span>
-                </div>
-            </div>
-
-        </section>
-
-        <section id="contact" style="padding: 100px 0; text-align: center;">
-            <p style="color: var(--accent); font-family: 'Fira Code'; margin-bottom: 20px;">05. Ready to hire?</p>
-            <h2 style="font-size: 3rem; color: var(--text-main); margin-bottom: 30px;">Get In Touch</h2>
-            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 50px auto;">
-                I am actively seeking an internship opportunity (June 2026). Whether you have a question or want to discuss how I can contribute to your team, my inbox is open.
-            </p>
-            <div class="cta-group" style="justify-content: center;">
-                <a href="mailto:abderrhmaneabouzaid@gmail.com?subject=Internship Application" class="btn-outline">✉️ Contact Me</a>
-                <a href="https://www.linkedin.com/in/abderrahmane-fouzi-abouzaid-250266331/" target="_blank" class="btn-outline">🔗 LinkedIn</a>
-            </div>
-        </section>
-
-    </main>
-
-    <div id="projectModal" class="modal-overlay" onclick="closeModal(event)">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal(event)">&times;</span>
-            <div id="modalBody" class="modal-body">
-                </div>
         </div>
-    </div>
 
-    <footer>
-        <a href="https://github.com/Abderrahmane-Fouzi-ABOUZAID" target="_blank">Designed & Built by Abderrahmane Fouzi ABOUZAID</a>
-    </footer>
+        <footer>
+            <a href="https://github.com/Abderrahmane-Fouzi-ABOUZAID" target="_blank">Designed & Built by Abderrahmane Fouzi ABOUZAID</a>
+        </footer>
 
-    <script>
+        <script>
         const projectData = {
             'pwc': {
                 title: "PwC x ACC: Digital Transformation Roadmap",
                 content: `
-                    <p><strong>Context:</strong> Consulting Case Game for a major Moroccan renewable energy operator (Solar, Wind, Hydro).</p>
-                    
-                    <h4>The Problem</h4>
-                    <p>The client faced a fragmented digital landscape: AI was treated as a buzzword with no clear strategy, data was siloed, and adoption of basic technologies was heterogeneous across departments. They lacked the governance and infrastructure to scale high-ROI use cases.</p>
-                    
-                    <h4>Our Solution: The 5-Year Roadmap</h4>
-                    <p>We designed a comprehensive strategy to transition the client into a tech leader in African Energy:</p>
-                    <ul>
-                        <li><strong>1. Foundation:</strong> Establish a "Data Center of Excellence" and robust Cybersecurity governance.</li>
-                        <li><strong>2. Integration:</strong> Deploy <em>IoT Smart Grids</em> for real-time asset monitoring and Edge Computing for low-latency processing.</li>
-                        <li><strong>3. Innovation:</strong> Implement AI-driven <em>Predictive Maintenance</em> (to reduce asset downtime) and <em>Production Forecasting</em> (to optimize dispatching).</li>
-                        <li><strong>4. Adoption:</strong> Defined KPIs for usage and a change management plan to upskill the workforce.</li>
-                    </ul>
-                    <p style='margin-top:15px; color: var(--accent)'><strong>Outcome:</strong> Awarded 3rd Place by a panel of industry experts for the solution's strategic depth and feasibility.</p>
-                `
+<p><strong>Context:</strong> Consulting Case Game for a major Moroccan renewable energy operator (Solar, Wind, Hydro).</p>
+
+<h4>The Problem</h4>
+<p>The client faced a fragmented digital landscape: AI was treated as a buzzword with no clear strategy, data was siloed, and adoption of basic technologies was heterogeneous across departments. They lacked the governance and infrastructure to scale high-ROI use cases.</p>
+
+<h4>Our Solution: The 5-Year Roadmap</h4>
+<p>We designed a comprehensive strategy to transition the client into a tech leader in African Energy:</p>
+<ul>
+<li><strong>1. Foundation:</strong> Establish a "Data Center of Excellence" and robust Cybersecurity governance.</li>
+<li><strong>2. Integration:</strong> Deploy <em>IoT Smart Grids</em> for real-time asset monitoring and Edge Computing for low-latency processing.</li>
+<li><strong>3. Innovation:</strong> Implement AI-driven <em>Predictive Maintenance</em> (to reduce asset downtime) and <em>Production Forecasting</em> (to optimize dispatching).</li>
+<li><strong>4. Adoption:</strong> Defined KPIs for usage and a change management plan to upskill the workforce.</li>
+</ul>
+<p style='margin-top:15px; color: var(--accent)'><strong>Outcome:</strong> Awarded 3rd Place by a panel of industry experts for the solution's strategic depth and feasibility.</p>
+`
             },
             'medisphere': {
                 title: "Medisphere – Healthcare Management System",
                 content: `
-                    <p>A full-stack application designed to manage users, data, and authentication securely at scale.</p>
-                    <h4>Key Technical Contributions</h4>
-                    <ul>
-                        <li>Designed a modular backend architecture using <strong>Java Servlets</strong>.</li>
-                        <li>Implemented <strong>DAO, Singleton, and Factory patterns</strong> for clean separation of concerns.</li>
-                        <li>Secured authentication with <strong>Bcrypt</strong> hashing and session management via HTTPSession.</li>
-                        <li>Managed dependencies with Maven and executed Unit/Integration tests.</li>
-                    </ul>
-                    <div class="modal-links">
-                        <a href="https://github.com/Abderrahmane-Fouzi-ABOUZAID/Medisphere" target="_blank" class="btn-outline">View Repository ↗</a>
-                    </div>
-                `
+<p><strong>Context:</strong> A full-stack solution designed to handle high-concurrency healthcare workflows (1,000+ users) with strict security and performance requirements (< 2s latency).</p>
+
+<h4>Technical Architecture</h4>
+<p>Engineered a strictly layered backend using <strong>Java 11 Servlets</strong> and <strong>Apache Tomcat</strong>. I implemented specific Design Patterns to ensure modularity:</p>
+<ul>
+<li><strong>DAO Pattern:</strong> Decoupled business logic from raw SQL operations for cleaner data access[cite: 785].</li>
+<li><strong>Singleton & Factory:</strong> Centralized database connection management to optimize resource usage[cite: 807, 809].</li>
+<li><strong>Generics & Wildcards:</strong> Built a custom, type-safe <code>APIResponse&lt;T&gt;</code> wrapper to standardize all JSON responses[cite: 837, 839].</li>
+</ul>
+
+<h4>Security & Frontend</h4>
+<p>The system features <strong>Bcrypt hashing</strong> for password security and strictly managed <strong>HTTPSessions</strong> for authentication[cite: 757]. The frontend is built with <strong>Nuxt.js (Vue.js)</strong> and <strong>TypeScript</strong> for a type-safe, reactive user experience[cite: 733, 734].</p>
+
+<h4>Quality Assurance (QA) Strategy</h4>
+<p>Adopted an Incremental SDLC with a rigorous testing strategy[cite: 736]:</p>
+<ul>
+<li><strong>Unit Testing:</strong> Achieved 90%+ coverage on Utility classes and 80%+ on DAO layers[cite: 871, 876].</li>
+<li><strong>Integration Testing:</strong> Validated Database connectivity and Servlet endpoints.</li>
+<li><strong>API Testing:</strong> Comprehensive endpoint validation using Postman[cite: 879].</li>
+</ul>
+
+<div class="modal-links">
+<a href="https://github.com/Abderrahmane-Fouzi-ABOUZAID/Medisphere" target="_blank" class="btn-outline">View Repository ↗</a>
+</div>
+`
             },
             'sim': {
                 title: "Dynamic Graph-Based Epidemic Simulation",
                 content: `
-                    <p>Modeling infection spread among 8 moving vehicles using graph theory and C.</p>
-                    <h4>Key Algorithms</h4>
-                    <ul>
-                        <li>Implemented <strong>dynamic adjacency matrix</strong> updates based on proximity detection.</li>
-                        <li>Designed <strong>probabilistic disease transmission</strong> algorithms based on contact duration.</li>
-                        <li>Automated <strong>GraphViz export</strong> for 120-timestep visualization of the contagion network.</li>
-                    </ul>
-                    <div class="modal-links">
-                        <a href="https://github.com/Abderrahmane-Fouzi-ABOUZAID/V2V-cyberattack-simulation-using-graphs" target="_blank" class="btn-outline">View Repository ↗</a>
-                    </div>
-                `
+<p>Modeling infection spread among 8 moving vehicles using graph theory and C.</p>
+<h4>Key Algorithms</h4>
+<ul>
+<li>Implemented <strong>dynamic adjacency matrix</strong> updates based on proximity detection.</li>
+<li>Designed <strong>probabilistic disease transmission</strong> algorithms based on contact duration.</li>
+<li>Automated <strong>GraphViz export</strong> for 120-timestep visualization of the contagion network.</li>
+</ul>
+<div class="modal-links">
+<a href="https://github.com/Abderrahmane-Fouzi-ABOUZAID/V2V-cyberattack-simulation-using-graphs" target="_blank" class="btn-outline">View Repository ↗</a>
+</div>
+`
             }
         };
 
@@ -431,7 +444,7 @@
                 document.body.style.overflow = 'auto'; // Restore scrolling
             }
         }
-    </script>
+        </script>
 
-</body>
+    </body>
 </html>
