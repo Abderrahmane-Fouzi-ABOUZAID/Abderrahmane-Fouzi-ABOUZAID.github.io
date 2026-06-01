@@ -247,7 +247,7 @@ body {
         <h2 class="section-title"><span>02.</span> About Me</h2>
         <div style="max-width: 800px; color: var(--text-muted);">
           <p style="margin-bottom: 20px;">
-          I am a third-year Computer Science student with a strong foundation in systems, algorithms, and software engineering. I enjoy building robust, well-structured solutions — from low-level simulations in C/C++ to full-stack applications using modern web technologies.
+          I am a third-year Computer Science student with a strong foundation in systems, algorithms, and software engineering. I enjoy building robust, well-structured solutions from low-level simulations in C/C++ to full-stack applications using modern web technologies.
           </p>
           <p style="margin-bottom: 20px;">
           Beyond technical skills, I thrive in competitive environments. My track record in CTFs and Consulting Games demonstrates my ability to solve complex problems under pressure.
@@ -483,12 +483,12 @@ body {
 <p><strong>Context:</strong> A full-stack platform developed for <strong>OCP Solutions</strong> to help engineering teams track and objectively measure the quality of their software projects, replacing gut-feeling reviews with data-driven insights.</p>
 
 <h4>The Idea</h4>
-<p>Modern teams generate a huge amount of signals across GitHub and Jira — commits, merge requests, code review comments, story points — but this data stays scattered and is rarely turned into actionable quality metrics. LEAP centralizes it and makes engineering quality measurable.</p>
+<p>Modern teams generate a huge amount of signals across GitHub and Jira commits, merge requests, code review comments, story points but this data stays scattered and is rarely turned into actionable quality metrics. LEAP centralizes it and makes engineering quality measurable.</p>
 
 <h4>How It Works</h4>
 <ul>
-<li><strong>Integrations:</strong> Connects to <strong>GitHub</strong> and <strong>Jira</strong> to automatically pull commits, merge requests, review comments, and tasks — kept in sync through webhooks.</li>
-<li><strong>AI Review Analysis:</strong> Each code review comment is classified by a <strong>Large Language Model (Llama 3.3 70B via OpenRouter)</strong> into a severity level — from a simple style suggestion to a critical security or data-loss bug.</li>
+<li><strong>Integrations:</strong> Connects to <strong>GitHub</strong> and <strong>Jira</strong> to automatically pull commits, merge requests, review comments, and tasks kept in sync through webhooks.</li>
+<li><strong>AI Review Analysis:</strong> Each code review comment is classified by a <strong>Large Language Model (Llama 3.3 70B via OpenRouter)</strong> into a severity level from a simple style suggestion to a critical security or data-loss bug.</li>
 <li><strong>Scoring Engine:</strong> A custom scoring model turns these severity signals into an engineering quality score, normalized by the size of each change and the complexity of the task (story points), so big features aren't unfairly penalized.</li>
 <li><strong>Alerts & Reports:</strong> The platform raises alerts on quality issues and automatically generates project reports ("comptes rendus") on a live dashboard.</li>
 </ul>
@@ -497,7 +497,7 @@ body {
 <p>Backend in <strong>Python / FastAPI</strong> with a relational database and Alembic migrations; modern reactive frontend; secure authentication and encrypted storage of third-party credentials; containerized with <strong>Docker</strong>.</p>
 
 <h4>My Focus</h4>
-<p>Worked across the stack — software architecture (backend & frontend), the GitHub/Jira integrations, the LLM classification logic, and the scoring engine — with an emphasis on clean, maintainable, and secure application logic.</p>
+<p>Worked across the stack software architecture (backend & frontend), the GitHub/Jira integrations, the LLM classification logic, and the scoring engine with an emphasis on clean, maintainable, and secure application logic.</p>
 `
         },
         'pwc': {
@@ -527,20 +527,20 @@ body {
 <h4>Technical Architecture</h4>
 <p>Engineered a strictly layered backend using <strong>Java 11 Servlets</strong> and <strong>Apache Tomcat</strong>. I implemented specific Design Patterns to ensure modularity:</p>
 <ul>
-<li><strong>DAO Pattern:</strong> Decoupled business logic from raw SQL operations for cleaner data access[cite: 785].</li>
-<li><strong>Singleton & Factory:</strong> Centralized database connection management to optimize resource usage[cite: 807, 809].</li>
-<li><strong>Generics & Wildcards:</strong> Built a custom, type-safe <code>APIResponse&lt;T&gt;</code> wrapper to standardize all JSON responses[cite: 837, 839].</li>
+<li><strong>DAO Pattern:</strong> Decoupled business logic from raw SQL operations for cleaner data access.</li>
+<li><strong>Singleton & Factory:</strong> Centralized database connection management to optimize resource usage.</li>
+<li><strong>Generics & Wildcards:</strong> Built a custom, type-safe <code>APIResponse&lt;T&gt;</code> wrapper to standardize all JSON responses.</li>
 </ul>
 
 <h4>Security & Frontend</h4>
-<p>The system features <strong>Bcrypt hashing</strong> for password security and strictly managed <strong>HTTPSessions</strong> for authentication[cite: 757]. The frontend is built with <strong>Nuxt.js (Vue.js)</strong> and <strong>TypeScript</strong> for a type-safe, reactive user experience[cite: 733, 734].</p>
+<p>The system features <strong>Bcrypt hashing</strong> for password security and strictly managed <strong>HTTPSessions</strong> for authentication. The frontend is built with <strong>Nuxt.js (Vue.js)</strong> and <strong>TypeScript</strong> for a type-safe, reactive user experience.</p>
 
 <h4>Quality Assurance (QA) Strategy</h4>
-<p>Adopted an Incremental SDLC with a rigorous testing strategy[cite: 736]:</p>
+<p>Adopted an Incremental SDLC with a rigorous testing strategy:</p>
 <ul>
-<li><strong>Unit Testing:</strong> Achieved 90%+ coverage on Utility classes and 80%+ on DAO layers[cite: 871, 876].</li>
+<li><strong>Unit Testing:</strong> Achieved 90%+ coverage on Utility classes and 80%+ on DAO layers.</li>
 <li><strong>Integration Testing:</strong> Validated Database connectivity and Servlet endpoints.</li>
-<li><strong>API Testing:</strong> Comprehensive endpoint validation using Postman[cite: 879].</li>
+<li><strong>API Testing:</strong> Comprehensive endpoint validation using Postman.</li>
 </ul>
 
 <div class="modal-links">
