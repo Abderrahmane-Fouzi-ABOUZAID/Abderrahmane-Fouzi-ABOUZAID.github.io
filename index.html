@@ -295,6 +295,20 @@ body {
         // Click on a project to view details
         </p>
 
+        <div class="project-card" onclick="openModal('leap')">
+          <div class="project-top">
+            <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+            <div style="color: var(--accent); font-size: 0.9rem;">Built for OCP Solutions · Click for details</div>
+          </div>
+          <h3>LEAP – Engineering Project Intelligence Platform</h3>
+          <p class="project-desc">A full-stack platform built for OCP Solutions that connects to GitHub & Jira and uses an LLM to score software engineering quality, surface alerts, and auto-generate reports.</p>
+          <div class="tech-stack">
+            <span class="mono">FastAPI</span>
+            <span class="mono">LLM (Llama 3.3)</span>
+            <span class="mono">GitHub & Jira API</span>
+          </div>
+        </div>
+
         <div class="project-card" onclick="openModal('pwc')">
           <div class="project-top">
             <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
@@ -463,6 +477,29 @@ body {
       animate();
 
       const projectData = {
+        'leap': {
+          title: "LEAP – Engineering Project Intelligence Platform",
+          content: `
+<p><strong>Context:</strong> A full-stack platform developed for <strong>OCP Solutions</strong> to help engineering teams track and objectively measure the quality of their software projects, replacing gut-feeling reviews with data-driven insights.</p>
+
+<h4>The Idea</h4>
+<p>Modern teams generate a huge amount of signals across GitHub and Jira — commits, merge requests, code review comments, story points — but this data stays scattered and is rarely turned into actionable quality metrics. LEAP centralizes it and makes engineering quality measurable.</p>
+
+<h4>How It Works</h4>
+<ul>
+<li><strong>Integrations:</strong> Connects to <strong>GitHub</strong> and <strong>Jira</strong> to automatically pull commits, merge requests, review comments, and tasks — kept in sync through webhooks.</li>
+<li><strong>AI Review Analysis:</strong> Each code review comment is classified by a <strong>Large Language Model (Llama 3.3 70B via OpenRouter)</strong> into a severity level — from a simple style suggestion to a critical security or data-loss bug.</li>
+<li><strong>Scoring Engine:</strong> A custom scoring model turns these severity signals into an engineering quality score, normalized by the size of each change and the complexity of the task (story points), so big features aren't unfairly penalized.</li>
+<li><strong>Alerts & Reports:</strong> The platform raises alerts on quality issues and automatically generates project reports ("comptes rendus") on a live dashboard.</li>
+</ul>
+
+<h4>Tech Stack</h4>
+<p>Backend in <strong>Python / FastAPI</strong> with a relational database and Alembic migrations; modern reactive frontend; secure authentication and encrypted storage of third-party credentials; containerized with <strong>Docker</strong>.</p>
+
+<h4>My Focus</h4>
+<p>Worked across the stack — software architecture (backend & frontend), the GitHub/Jira integrations, the LLM classification logic, and the scoring engine — with an emphasis on clean, maintainable, and secure application logic.</p>
+`
+        },
         'pwc': {
           title: "PwC x ACC: Digital Transformation Roadmap",
           content: `
