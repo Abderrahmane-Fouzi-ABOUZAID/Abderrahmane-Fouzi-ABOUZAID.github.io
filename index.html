@@ -461,7 +461,7 @@ body {
       <section id="projects" class="section-block">
         <p class="section-kicker">04 · Selected work</p>
         <h2 class="section-title">Systems built to be used</h2>
-        <p class="projects-intro">The two featured projects translate cybersecurity frameworks into operational workflows. Select any project for architecture, security, and implementation details.</p>
+        <p class="projects-intro">The featured projects turn cybersecurity and engineering signals into operational workflows. Select any project for architecture, security, and implementation details.</p>
 
         <button class="project-card project-card--visual" type="button" onclick="openModal('dnssi')" aria-haspopup="dialog" aria-label="View DNSSI Compass project details">
           <div class="project-copy">
@@ -491,14 +491,21 @@ body {
           </figure>
         </button>
 
-        <div class="secondary-projects" aria-label="Additional selected projects">
-          <button class="project-card" type="button" onclick="openModal('leap')" aria-haspopup="dialog">
+        <button class="project-card project-card--visual" type="button" onclick="openModal('leap')" aria-haspopup="dialog" aria-label="View LEAP Engineering Project Intelligence project details">
+          <div class="project-copy">
             <p class="project-eyebrow">Built for OCP Solutions</p>
             <h3>LEAP: Engineering Project Intelligence</h3>
             <p class="project-desc">GitHub and Jira analytics with LLM-assisted review classification, engineering-quality scoring, alerts, and automated reporting.</p>
-            <div class="tech-stack"><span>FastAPI</span><span>LLM</span><span>GitHub and Jira APIs</span></div>
-          </button>
+            <div class="tech-stack">
+              <span>FastAPI</span><span>React</span><span>LLM</span><span>GitHub and Jira APIs</span>
+            </div>
+          </div>
+          <figure class="project-visual">
+            <img src="assets/leap-dashboard.png" alt="LEAP engineering intelligence dashboard showing project activity, developer scores, open merge requests, and critical alerts" loading="lazy">
+          </figure>
+        </button>
 
+        <div class="secondary-projects" aria-label="Additional selected projects">
           <button class="project-card" type="button" onclick="openModal('pwc')" aria-haspopup="dialog">
             <p class="project-eyebrow">3rd place · PwC x ACC</p>
             <h3>Digital Energy Transformation</h3>
