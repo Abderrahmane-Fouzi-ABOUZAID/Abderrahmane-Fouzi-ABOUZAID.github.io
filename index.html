@@ -140,7 +140,7 @@ body {
         .cv-download[open] > summary::after { transform: rotate(180deg); }
         .cv-language-menu {
           position: absolute; top: calc(100% + 12px); left: 0; z-index: 30;
-          width: min(340px, calc(100vw - 40px)); padding: 8px;
+          width: min(430px, calc(100vw - 40px)); padding: 8px;
           background: var(--bg-raised); border: 1px solid var(--border); border-radius: 4px;
           box-shadow: 0 18px 48px oklch(0.08 0.02 250 / 0.48);
         }
@@ -148,15 +148,22 @@ body {
           padding: 8px 10px 10px; color: var(--text-muted); font-family: 'JetBrains Mono';
           font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
         }
-        .cv-language-option {
+        .cv-language-row {
           display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px;
           align-items: center; padding: 12px 10px; border-radius: 3px;
         }
-        .cv-language-option + .cv-language-option { border-top: 1px solid var(--border); border-radius: 0 0 3px 3px; }
-        .cv-language-option:hover { background: var(--accent-soft); }
-        .cv-language-option strong { display: block; color: var(--text-main); font-size: 0.94rem; }
-        .cv-language-option small { display: block; color: var(--text-muted); font-size: 0.76rem; margin-top: 1px; }
-        .cv-language-code { color: var(--accent); font-family: 'JetBrains Mono'; font-size: 0.76rem; white-space: nowrap; }
+        .cv-language-row + .cv-language-row { border-top: 1px solid var(--border); border-radius: 0 0 3px 3px; }
+        .cv-language-row strong { display: block; color: var(--text-main); font-size: 0.94rem; }
+        .cv-language-row small { display: block; color: var(--text-muted); font-size: 0.76rem; margin-top: 1px; }
+        .cv-language-actions { display: flex; align-items: center; gap: 7px; }
+        .cv-language-action {
+          display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+          min-height: 36px; padding: 7px 10px; border: 1px solid var(--border); border-radius: 3px;
+          color: var(--text-main); font-family: 'JetBrains Mono'; font-size: 0.7rem; white-space: nowrap;
+        }
+        .cv-language-action:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+        .cv-language-action--download { color: var(--bg-dark); border-color: var(--accent); background: var(--accent); font-weight: 600; }
+        .cv-language-action--download:hover { color: var(--bg-dark); background: oklch(0.89 0.12 171); }
 
         @media (max-height: 1020px) {
           .cv-language-menu { top: auto; bottom: calc(100% + 12px); }
@@ -415,15 +422,21 @@ body {
             <details class="cv-download" id="cvDownloadChooser">
               <summary class="btn-outline">Download CV</summary>
               <div class="cv-language-menu" role="group" aria-labelledby="cvLanguageHeading">
-                <p class="cv-language-heading" id="cvLanguageHeading">Choose a language</p>
-                <a href="Abderrahmane-Fouzi-ABOUZAID-CV-Anglais.pdf" class="cv-language-option" download="Abderrahmane-Fouzi-ABOUZAID-CV-English.pdf">
+                <p class="cv-language-heading" id="cvLanguageHeading">Choose a language and action</p>
+                <div class="cv-language-row">
                   <span><strong>English</strong><small>CV in English</small></span>
-                  <span class="cv-language-code" aria-hidden="true">EN ↓</span>
-                </a>
-                <a href="Abderrahmane-Fouzi-ABOUZAID-CV-Francais.pdf" class="cv-language-option" download="Abderrahmane-Fouzi-ABOUZAID-CV-French.pdf">
+                  <span class="cv-language-actions">
+                    <a href="Abderrahmane-Fouzi-ABOUZAID-CV-Anglais.pdf" class="cv-language-action" target="_blank" rel="noopener noreferrer">View <span aria-hidden="true">↗</span></a>
+                    <a href="Abderrahmane-Fouzi-ABOUZAID-CV-Anglais.pdf" class="cv-language-action cv-language-action--download" download="Abderrahmane-Fouzi-ABOUZAID-CV-English.pdf">Download <span aria-hidden="true">↓</span></a>
+                  </span>
+                </div>
+                <div class="cv-language-row">
                   <span><strong>Français</strong><small>CV en français</small></span>
-                  <span class="cv-language-code" aria-hidden="true">FR ↓</span>
-                </a>
+                  <span class="cv-language-actions">
+                    <a href="Abderrahmane-Fouzi-ABOUZAID-CV-Francais.pdf" class="cv-language-action" target="_blank" rel="noopener noreferrer">View <span aria-hidden="true">↗</span></a>
+                    <a href="Abderrahmane-Fouzi-ABOUZAID-CV-Francais.pdf" class="cv-language-action cv-language-action--download" download="Abderrahmane-Fouzi-ABOUZAID-CV-French.pdf">Download <span aria-hidden="true">↓</span></a>
+                  </span>
+                </div>
               </div>
             </details>
             <a href="https://github.com/Abderrahmane-Fouzi-ABOUZAID" target="_blank" rel="noopener noreferrer" class="btn-outline">GitHub</a>
@@ -875,7 +888,7 @@ body {
         }
       });
 
-      cvDownloadChooser.querySelectorAll('.cv-language-option').forEach((option) => {
+      cvDownloadChooser.querySelectorAll('.cv-language-action').forEach((option) => {
         option.addEventListener('click', () => cvDownloadChooser.removeAttribute('open'));
       });
 
