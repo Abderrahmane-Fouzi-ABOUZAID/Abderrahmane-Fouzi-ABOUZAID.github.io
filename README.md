@@ -1,36 +1,33 @@
-# Abderrahmane Fouzi ABOUZAID: Personal Portfolio
+# Abderrahmane Fouzi ABOUZAID portfolio
 
-Single-page portfolio for a cybersecurity engineering student focused on GRC, application security, and software engineering. The site presents professional experience, competition results, technical capabilities, and evidence-backed project case studies.
+Evidence-led portfolio for a cybersecurity engineering student focused on security assurance, application security, GRC automation, and software engineering.
 
-## Featured work
+## Information architecture
 
-### DNSSI Compass: Security Assurance Platform
+- Recruiter-first homepage with selected work, experience, education, results, capabilities, and contact information
+- Dedicated, shareable case studies for DNSSI Compass, Cybersecurity Standards Academy, LEAP, Medisphere, the PwC consulting case, and the graph-based simulation
+- Explicit collaborator credits and public/private evidence labels
+- French and English CV view and download actions
 
-A multi-user DNSSI audit and self-assessment system developed during a cybersecurity internship at Royal Air Maroc. It structures 14 chapters, 31 objectives, and 104 controls into assignable campaigns with maturity scoring, compliance summaries, chapter-level authorization, and CSV/Excel/PDF exports.
+## Implementation
 
-**Stack:** Next.js 16, React 19, TypeScript, Tailwind CSS 4, FastAPI, SQLAlchemy, SQLite/PostgreSQL.
+- Semantic HTML, shared responsive CSS, and framework-free JavaScript
+- Mobile navigation preserves all destinations
+- WCAG-oriented focus states, skip link, 44px touch targets, and reduced-motion support
+- WebP project imagery with explicit intrinsic dimensions
+- Canonical URLs, Open Graph and Twitter metadata, Person structured data, sitemap, robots file, favicon, and custom 404 page
+- No continuous canvas animation and no modal-only project content
 
-### Cybersecurity Standards Academy
+## Design system
 
-An interactive GRC learning platform covering ISO 27001/27002, NIST CSF 2.0, GDPR, and DNSSI through structured courses, scenario-based labs, and exercises.
-
-**Stack:** React, TypeScript, Vite, Tailwind CSS, Python, FastAPI, REST APIs.
-
-### Additional projects
-
-- **LEAP:** Engineering intelligence platform integrating GitHub, Jira, LLM-assisted review classification, scoring, alerts, and reports.
-- **Digital Energy Transformation:** Third-place PwC x ACC consulting case covering cybersecurity governance, data, IoT, edge computing, and AI.
-- **Medisphere:** Layered Java/Nuxt.js healthcare application with typed APIs, authentication, sessions, and automated testing.
-- **Graph-Based Epidemic Simulation:** C and graph-theory simulation of malware propagation in dynamic vehicle-to-vehicle networks.
-
-## Portfolio implementation
-
-- Semantic HTML, responsive CSS, and framework-free JavaScript.
-- Keyboard-accessible project dialogs with focus restoration and Escape handling.
-- Reduced-motion support and adaptive background animation.
-- Real project screenshots stored in `assets/`.
-- Updated downloadable English CV.
+See `DESIGN.md` for the evidence-dossier direction, tokens, layout rules, accessibility principles, and content standards.
 
 ## Run locally
 
-Open `index.html` directly, or serve the directory with any static HTTP server.
+Serve the directory so project URLs and root-relative 404 assets resolve correctly:
+
+```bash
+python3 -m http.server 8765
+```
+
+Then open `http://127.0.0.1:8765/`.
