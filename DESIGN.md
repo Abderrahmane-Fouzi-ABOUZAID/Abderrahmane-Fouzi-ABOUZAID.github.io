@@ -38,7 +38,7 @@ Manrope is the single committed family. Hierarchy comes from scale, weight, line
 - Major sections use distinct spacing rhythms rather than identical cards
 - Homepage provides fast recruiter scanning
 - Dedicated case studies provide durable, shareable technical depth
-- Primary targets are at least 44px high on touch layouts
+- Every link, button, and summary has a minimum 48 × 48 CSS-pixel target at every viewport
 
 ## Components
 
@@ -47,6 +47,17 @@ Manrope is the single committed family. Hierarchy comes from scale, weight, line
 - Capability map: capability connected directly to project evidence
 - CV chooser: language first, then explicit view/download actions
 - Mobile jump menu: all destinations remain available at every width
+
+## Spatial and responsive contract
+
+- All padding, margins, and gaps use the shared `--space-*` scale: 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, and 128px at the default root size.
+- Fluid gutters, section spacing, and component padding interpolate between named scale values.
+- Project layouts use their actual container width, including enlarged text, to switch between four columns, two columns, and one column.
+- Workflow and decision layouts respond to the case-study reading column.
+- Text and control borders use separate contrast tokens from decorative rules.
+- Manrope is self-hosted, preloaded, and uses optional font display to avoid late swaps.
+- Navigation stays visible without JavaScript; the enhanced mobile menu includes its close control in the keyboard loop.
+- The CV chooser stays in the page flow on small screens.
 
 ## Motion
 

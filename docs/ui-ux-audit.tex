@@ -1,0 +1,247 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=22mm]{geometry}
+\usepackage{amsmath}
+\usepackage{array,longtable,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{xurl}
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=blue}
+\lstset{basicstyle=\small\ttfamily,breaklines=true,columns=fullflexible,frame=single}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\newcommand{\file}[1]{\nolinkurl{#1}}
+\title{Portfolio UI/UX Audit and Implementation Record}
+\author{Abderrahmane Fouzi ABOUZAID portfolio}
+\date{14 September 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The homepage, six case studies, and error page were reviewed together with the complete shared stylesheet, interaction script, design documents, navigation metadata, and image declarations. The implemented changes establish a consistent spatial system, fluid layouts, readable secondary text, 48-by-48-pixel interaction targets, robust keyboard behavior, and local font loading. The existing dark security-dossier identity and project evidence remain the basis of the design.
+\end{abstract}
+
+\section{Why the system needed correction}
+People infer relationships from distance: a label should sit nearer its value than an unrelated control. A coherent spacing scale makes those relationships predictable. Responsive design must then preserve the relationships when there is less room, rather than squeeze every desktop column into the viewport. Finally, a visible control must have a usable hit area and a reachable keyboard state; visual refinement cannot compensate for an inaccessible action.
+
+The initial implementation already had valuable foundations: semantic landmarks, descriptive image alternatives, explicit image dimensions, independent case-study URLs, a reduced-motion mode, and a documented visual identity. Problems arose at the boundaries between those foundations: inconsistent spacing values, 44px controls alongside 48px controls, inline evidence links with approximately 22px height, small low-contrast captions, mobile floats, and JavaScript-dependent navigation.
+
+\paragraph{Visual direction.}
+The documented audience is recruiters and technical reviewers evaluating concrete engineering evidence. The retained physical scene is a focused review of technical material on a dark display. The visual strategy preserves the deep blue-neutral canvas, Manrope typography, orange actions, and green evidence states. The refactor improves scanning and legibility within that identity. Existing project screenshots provide the imagery; generated replacement assets were unnecessary.
+
+\paragraph{Anti-pattern verdict.}
+No generic redesign was introduced. The artificial evidence-path badge became normal document text, mobile floats became ordered grid content, and screenshot fallbacks became ordinary page content. Decision groups and the education dossier remain because they group related evidence. Their visual distinctiveness is an editorial judgment, not something an automated checker certifies.
+
+\section{Scope and method}
+\begin{longtable}{p{0.33\linewidth}p{0.60\linewidth}}
+\toprule
+Surface & Review performed \\
+\midrule
+\endhead
+\file{index.html} & Hero, profile metadata, actions, CV chooser, project index, experience, education, results, capabilities, contact, footer, and screenshot fallbacks. \\
+\file{projects/dnssi.html} & Case metadata, image, assurance workflow, decision headings, access-boundary anchor, next navigation, screenshot fallback. \\
+\file{projects/academy.html} & Long title, learning workflow, decision hierarchy, case narrative, image and navigation. \\
+\file{projects/leap.html} & Long collaborative metadata, workflow, contributor copy, decision hierarchy, image and navigation. \\
+\file{projects/medisphere.html} & Long project title, team metadata, image, request workflow, architecture decisions and navigation. \\
+\file{projects/pwc.html} & Text-only case hero, roadmap, decision grouping and navigation. \\
+\file{projects/graph-simulation.html} & Long title, simulation workflow, nested headings, repository action and navigation. \\
+\file{404.html} & Root-relative assets, recovery actions, landmark focus and narrow-screen layout. \\
+\file{styles.css}; \file{script.js} & All authored rules and interaction paths, including responsive overrides, font loading, focus, disabled states, scroll behavior and native-dialog lifecycle. \\
+Supporting files & \file{PRODUCT.md}, \file{DESIGN.md}, \file{README.md}, \file{robots.txt}, \file{sitemap.xml}, favicon and social-cover SVG sources, raster dimensions, and local CV link destinations. PDF document contents and claims in project repositories were outside this interface audit. \\
+\bottomrule
+\end{longtable}
+
+The process combined source inspection, computed browser geometry, screenshots, keyboard tests, automated accessibility scans, local-link validation, image-dimension checks, and font-load experiments. The deployed site remains framework-free HTML, CSS and JavaScript. Audit dependencies run separately and add no runtime bundle.
+
+\section{Findings and implemented corrections}
+Severity reflects user impact. P1 means a substantial accessibility or explicitly requested interaction-contract failure; P2 means a layout or usability defect; P3 means presentation or maintenance polish. There were no P0 blockers. The twelve consolidated findings comprise four P1, six P2, and two P3 issues.
+
+\subsection{P1: Small interaction targets}
+\textbf{Location:} \file{styles.css}, navigation, CV actions, project links, capability evidence links and footer links.
+
+The initial CSS mixed 44px and 48px heights. Evidence links used inline text boxes around 22px high. The mobile brand was approximately 42 by 44px. This made neighboring actions harder to select and failed the user's explicit 48-by-48 contract. That contract is stricter than the WCAG 2.2 AA target-size minimum; a 44px control was not classified as a WCAG failure merely because it was below 48px.
+
+\textbf{Implemented:} all anchors, buttons and summaries receive a 48px minimum in both dimensions. Standalone links use actual layout boxes, with wrapping and padding, rather than invisible overlapping hit-area extensions. The target floor stays in CSS pixels while text and padding respond to user font sizing.
+
+\subsection{P1: Secondary text contrast}
+\textbf{Location:} \file{styles.css}, the quiet text token and its uses in captions, status descriptions and metadata.
+
+The previous quiet color measured 4.18:1 on the panel color, below the 4.5:1 threshold for ordinary text. The new quiet token measures 6.43:1 on that same surface. Control boundaries now use a distinct token measuring 4.04:1 against the panel; decorative rules can remain less prominent without weakening the controls themselves.
+
+\textbf{Implemented:} raised quiet and muted luminance, separated interactive borders from structural rules, increased small-text sizes, and retained non-color affordances such as underlines and focus outlines. Measurements use browser-rendered sRGB samples of the authored OKLCH colors.
+
+\subsection{P1: Navigation depended on JavaScript}
+\textbf{Location:} mobile navigation rules in \file{styles.css}; initialization in \file{script.js}; shared headers in all content pages.
+
+The original mobile links were transparent and unavailable until JavaScript changed their state. Script failure therefore removed primary destinations.
+
+\textbf{Implemented:} ordinary navigation is visible by default. The overlay and toggle appear only after navigation initialization succeeds. All five destinations remain visible with JavaScript disabled. The 404 page deliberately has its home link and recovery actions instead of the five-destination menu.
+
+\subsection{P1: Incomplete mobile keyboard isolation}
+\textbf{Location:} \file{script.js}, menu state and keyboard handling.
+
+The original focus loop cycled only through destination links, excluding the visible close button. Page content beneath the menu remained exposed to assistive navigation.
+
+\textbf{Implemented:} the close button participates in the loop; background content becomes inert while the menu is open; Escape restores focus; selecting a same-page destination focuses that section; changing to a desktop layout clears inert states. Skip links now have an explicitly focusable main landmark.
+
+\subsection{P2: Inconsistent spacing and inherited margins}
+\textbf{Location:} \file{styles.css}, all major layouts and content components.
+
+Values including 7, 10, 14, 18, 22, 26, 28, 30, 34, 38 and 42px served overlapping spacing roles. Unscoped paragraph margins also offset the second project metric during refinement.
+
+\textbf{Implemented:} named spacing tokens, bounded fluid spacing roles, component-specific paragraph margins, and aligned metric rows. Border thickness, focus geometry and optical icon adjustments are documented exceptions rather than spacing tokens.
+
+\subsection{P2: Rigid project columns and mobile floats}
+\textbf{Location:} project rows in \file{index.html} and \file{styles.css}.
+
+Nested fixed thumbnail widths and compensating proof-column padding tightly coupled independent elements. On mobile, floated thumbnails forced the title and narrative to share narrow line fragments. Viewport-only breakpoints also failed an enlarged-text case during validation.
+
+\textbf{Implemented:} thumbnail, metadata, narrative and proof are explicit sibling grid items. The project container selects four-column, two-column or single-column presentation from its actual available width. No float, compensating width calculation, global minimum body width, or page overflow clipping remains.
+
+\subsection{P2: CV panel detached from its trigger}
+\textbf{Location:} CV chooser rules in \file{styles.css}; dismissal logic in \file{script.js}.
+
+The mobile CV menu was fixed to the viewport bottom while its trigger remained in the hero. It could cover unrelated content without modal focus behavior.
+
+\textbf{Implemented:} the chooser expands in document flow below its summary on smaller layouts. Language labels and view/download actions stack into a clear grid. Escape restores focus, leaving the chooser closes it, and choosing an action does not leave focus inside hidden content. Native details behavior remains available without JavaScript.
+
+\subsection{P2: Font delivery could cause late changes}
+\textbf{Location:} first stylesheet rule and the head of every HTML page.
+
+The original Google Fonts import introduced another network dependency before retrieving the font. A late swap could change wrapping throughout a long page.
+
+\textbf{Implemented:} a local variable Manrope WOFF2 file, a preload on every page, and optional font display. If the font cannot arrive in its short initial loading opportunity, the browser retains the fallback for that navigation. The original Open Font License is distributed beside the asset. No font metrics were guessed.
+
+\subsection{P2: Workflow labels lost structure and room}
+\textbf{Location:} workflow markup in all six case studies; workflow and decision styles.
+
+Five equal columns could reduce long step names to fragments within a narrow case-content column. A composite image role also concealed the natural step-by-step text structure from assistive technology. Repeated decision headings were peers of their introductory heading.
+
+\textbf{Implemented:} semantic ordered lists, readable vertical workflows by default, and horizontal steps only when the reading container is sufficiently wide. Decision grids likewise collapse based on their actual column. Nested decision headings use the next semantic level. Labeled project-proof containers now have an explicit group role.
+
+\subsection{P2: Screenshot failure and fallback behavior}
+\textbf{Location:} \file{script.js}, screenshot CSS, and existing fallback sections.
+
+The native viewer had no explicit image failure state. CSS-only full-screen fallbacks covered the page without native dialog isolation.
+
+\textbf{Implemented:} a loading status, disabled zoom until the image is ready, readable load-failure feedback, native dialog containment, zoom confined to the image region, and focus restoration on close. Hash fallbacks are readable sections in normal document flow. Their back links remain usable without JavaScript. Long screenshot titles and controls wrap within the viewport.
+
+\subsection{P3: Interaction timing and feedback}
+\textbf{Location:} navigation, links, image actions and reduced-motion rules.
+
+Hover feedback applied without distinguishing a fine pointer, the menu icon animated its top coordinate, and active feedback was inconsistent.
+
+\textbf{Implemented:} one 180ms ease-out token, a 320ms image transform, transform-based menu strokes, fine-pointer hover rules, small active feedback, visible focus outlines, and forced-color support. Reduced motion removes transitions and nonessential transforms. Shadows are reserved for the floating CV surface; static evidence content does not move simply because a pointer crosses it.
+
+\subsection{P3: Dense source and stale documentation}
+\textbf{Location:} case-study markup, \file{README.md}, \file{DESIGN.md}.
+
+Several complete headers and sections occupied individual lines, making structural errors harder to review. Documentation still described a 44px target contract.
+
+\textbf{Implemented:} consistent source formatting, updated design-system documentation, this audit record, and a repeatable browser regression suite. Existing URLs, metadata and evidence content remain available.
+
+\section{The resulting layout contract}
+A spacing system should offer enough steps to express relationships without permitting a different arbitrary value for every component. With a default base unit of four CSS pixels, the implemented spacing vocabulary is
+\[
+ S=\{4,8,12,16,20,24,32,40,48,64,80,96,128\}\ \mathrm{px}.
+\]
+The authored tokens use rem units so spacing can grow with text. Fluid roles interpolate between named endpoints; intermediate values are intentionally fluid, not additional static tokens.
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Role & Minimum & Maximum \\
+\midrule
+Page gutter & 16px & 32px \\
+Major section spacing & 64px & 128px \\
+Large layout gap & 32px & 64px \\
+Evidence surface padding & 20px & 32px \\
+\bottomrule
+\end{tabular}
+\end{center}
+For a viewport width $V$, page content width is bounded by
+\[
+ W=\min\left(V-2G,\,76\,\mathrm{rem}\right),
+\]
+where $G$ is the fluid gutter. Flexible grid tracks use \file{minmax(0, 1fr)} so content can reflow within the available width. Project queries switch at 70rem and 46rem of container width; decision grids switch at 35rem; workflow diagrams need 50rem to become horizontal. The navigation changes presentation at 48rem, while broad page compositions simplify below 64rem.
+
+Body text is 16px with 1.7 line height at default settings. Labels are at least 13px; secondary descriptions use 14px or more. Display type ranges from 40 to 80px with 1.1 line height, and section headings from 32 to 60px with 1.15 line height. Narrative text has a maximum measure of 70ch. Intrinsic image dimensions and a stable thumbnail aspect ratio reserve space before image decoding.
+
+\section{Verification and limits}
+\begin{longtable}{p{0.49\linewidth}p{0.44\linewidth}}
+\toprule
+Check & Result \\
+\midrule
+\endhead
+Eight pages at nine widths: 320, 390, 480, 768, 820, 1024, 1280, 1440 and 1920px & 72 combinations passed with no document overflow, escaped content, undersized actions or overlapping grid siblings. \\
+200\% CSS text enlargement at 320 and 1280px & 16 page/size combinations passed. This complements viewport reflow; it is not a claim that a physical device's browser zoom was exercised. \\
+Automated accessibility & 19 scans passed with zero automated violations: 16 page scans plus open navigation, CV and screenshot states, using axe-core WCAG A/AA and best-practice rules. \\
+JavaScript disabled & 16 page/size combinations passed, together with navigation, CV and screenshot fallback paths. \\
+Keyboard and interaction lifecycle & Skip link, menu loop and dismissal, destination focus, resize, CV dismissal, screenshot fit/zoom, load failure and return focus. \\
+Local document graph & 104 local links checked; no missing file or fragment destinations. \\
+Image declarations & All 15 declarations checked against actual dimensions and nonempty alternatives. \\
+Contrast & Quiet text/panel: 6.43:1; interactive border/panel: 4.04:1. \\
+Font loading & Normal, delayed and blocked font conditions each recorded zero layout shift in the instrumented local page load. \\
+Motion and high contrast & Reduced-motion scrolling/transitions and forced-color focus checked. \\
+Source integrity & JavaScript syntax, formatting and whitespace diff checks. \\
+\bottomrule
+\end{longtable}
+
+A supplementary sweep checked 202 intermediate viewport widths across the homepage and the long-title Medisphere case. No document overflow was detected. Emulated touch navigation and a 640-by-320px landscape menu also passed. These supplementary checks used Chromium and do not replace physical-device validation.
+
+\paragraph{Manual review of automated results.}
+Axe marks the controls relationship of unopened screenshot dialogs as needing review. The referenced dialog is created before its launcher is enhanced, has the matching unique ID, and opens successfully from all seven launch points. The open-dialog scan has no such unresolved reference. This is a verified hidden-target relationship, not a missing ID.
+
+\paragraph{Evidence boundary.}
+The automated run uses Chromium through Playwright. It does not constitute real-device testing on iOS Safari or Android, a screen-reader certification, or field Core Web Vitals measurement. The 320px checks exercise narrow reflow; they do not claim literal browser-zoom coverage on every device. Screenshots were inspected for the homepage and DNSSI case at mobile, tablet and desktop sizes. Content hidden inside bitmap screenshots cannot have its contrast or semantics repaired by website CSS.
+
+\paragraph{Health assessment.}
+The implementation is substantially stronger than the baseline. For the skill's qualitative rubric, accessibility scores 3/4, performance 4/4, responsive design 4/4, theming 4/4 and anti-pattern restraint 3/4, totaling 18/20. These are bounded review judgments: accessibility is not assigned a perfect score without assistive-technology and multi-browser validation, and visual taste is not an objective compliance metric.
+
+\section{Implementation source map}
+These entry points identify the authored rules and functions used by the completed changes. Shared rules apply to every page; case-study HTML was also reviewed and reformatted individually.
+\begin{longtable}{p{0.56\linewidth}p{0.37\linewidth}}
+\toprule
+Concern & Source entry point \\
+\midrule
+\endhead
+Spatial tokens and fluid roles & \file{styles.css:29} \\
+Interaction target floor & \file{styles.css:120} \\
+Quiet text contrast & \file{styles.css:18} \\
+Project container and desktop grid & \file{styles.css:566} \\
+Container-responsive project stacking & \file{styles.css:1364} \\
+Native and hash screenshot presentation & \file{styles.css:1083} \\
+Menu state and background isolation & \file{script.js:10} \\
+CV dismissal and focus handling & \file{script.js:52} \\
+Section navigation state & \file{script.js:107} \\
+Screenshot loading and failure states & \file{script.js:182} \\
+Project DOM structure & \file{index.html:260} \\
+Workflow semantics & \file{projects/dnssi.html:137} \\
+\bottomrule
+\end{longtable}
+The recorded automated output is available in \file{docs/ui-audit-results.json}. Screenshots remain in the temporary artifact directory described below.
+
+\section{Reproduce the audit}
+The production site requires no install or build. Serve the repository in one terminal:
+\begin{lstlisting}
+python3 -m http.server 8765 --bind 127.0.0.1
+\end{lstlisting}
+Install the audit dependencies into a temporary location and run the regression suite in another terminal. The versions below identify the tested toolchain:
+\begin{lstlisting}
+npm install --prefix /tmp/portfolio-audit-tools \
+  --no-audit --no-fund --ignore-scripts \
+  playwright@1.48.2 axe-core@4.13.0
+/tmp/portfolio-audit-tools/node_modules/.bin/playwright install chromium
+NODE_PATH=/tmp/portfolio-audit-tools/node_modules \
+  node tests/ui-audit.cjs
+\end{lstlisting}
+The script writes JSON results and six full-page screenshots to \file{/tmp/portfolio-ui-audit}. Set \file{PORTFOLIO_BASE_URL} or \file{PORTFOLIO_ARTIFACT_DIR} to override the server or output path. Audit packages and browser binaries are not part of the deployed portfolio.
+
+To regenerate this PDF:
+\begin{lstlisting}
+pdflatex -interaction=nonstopmode -halt-on-error \
+  -output-directory=/tmp docs/ui-ux-audit.tex
+\end{lstlisting}
+\end{document}

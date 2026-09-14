@@ -1,0 +1,233 @@
+{
+  "layouts": 72,
+  "accessibility": [
+    {
+      "label": "/ at 320px",
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "aria-valid-attr-value",
+          "targets": [
+            [
+              "a[href$=\"#screenshot-dnssi\"]"
+            ],
+            [
+              "a[href$=\"#screenshot-academy\"]"
+            ],
+            [
+              "a[href$=\"#screenshot-leap\"]"
+            ],
+            [
+              "a[href$=\"#screenshot-medisphere\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "label": "/ at 1440px",
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "aria-valid-attr-value",
+          "targets": [
+            [
+              "a[href$=\"#screenshot-dnssi\"]"
+            ],
+            [
+              "a[href$=\"#screenshot-academy\"]"
+            ],
+            [
+              "a[href$=\"#screenshot-leap\"]"
+            ],
+            [
+              "a[href$=\"#screenshot-medisphere\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "label": "/projects/dnssi.html at 320px",
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "aria-valid-attr-value",
+          "targets": [
+            [
+              "a[href$=\"#full-screenshot\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "label": "/projects/dnssi.html at 1440px",
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "aria-valid-attr-value",
+          "targets": [
+            [
+              "a[href$=\"#full-screenshot\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "label": "/projects/academy.html at 320px",
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "aria-valid-attr-value",
+          "targets": [
+            [
+              "a[href$=\"#full-screenshot\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "label": "/projects/academy.html at 1440px",
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "aria-valid-attr-value",
+          "targets": [
+            [
+              "a[href$=\"#full-screenshot\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "label": "/projects/leap.html at 320px",
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "aria-valid-attr-value",
+          "targets": [
+            [
+              "a[href$=\"#full-screenshot\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "label": "/projects/leap.html at 1440px",
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "aria-valid-attr-value",
+          "targets": [
+            [
+              "a[href$=\"#full-screenshot\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "label": "/projects/medisphere.html at 320px",
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "label": "/projects/medisphere.html at 1440px",
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "label": "/projects/pwc.html at 320px",
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "label": "/projects/pwc.html at 1440px",
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "label": "/projects/graph-simulation.html at 320px",
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "label": "/projects/graph-simulation.html at 1440px",
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "label": "/404.html at 320px",
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "label": "/404.html at 1440px",
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "label": "Mobile navigation open",
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "label": "CV chooser open",
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "aria-valid-attr-value",
+          "targets": [
+            [
+              "a[href$=\"#screenshot-dnssi\"]"
+            ],
+            [
+              "a[href$=\"#screenshot-academy\"]"
+            ],
+            [
+              "a[href$=\"#screenshot-leap\"]"
+            ],
+            [
+              "a[href$=\"#screenshot-medisphere\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Screenshot viewer open",
+      "violations": [],
+      "manualReview": []
+    }
+  ],
+  "noJavaScript": 16,
+  "textScaling": 16,
+  "interactions": [
+    "Skip link; mobile focus loop includes close button; Escape; destination focus; desktop resize",
+    "CV target sizes, PDF responses, Escape, focus departure",
+    "All seven screenshot entry points: fit, zoom, Escape, focus restoration",
+    "Screenshot load failure has a readable status and working exit",
+    "Reduced motion and forced-color focus",
+    "No-JavaScript screenshot return and CV chooser"
+  ],
+  "runtimeErrors": [],
+  "fontLoading": [
+    {
+      "mode": "normal",
+      "layoutShift": 0
+    },
+    {
+      "mode": "delayed",
+      "layoutShift": 0
+    },
+    {
+      "mode": "blocked",
+      "layoutShift": 0
+    }
+  ]
+}
