@@ -43,7 +43,7 @@ Manrope is the single committed family. Hierarchy comes from scale, weight, line
 ## Components
 
 - Evidence rail: compact metadata for context, ownership, status, and proof
-- Case-study row: screenshot or artifact plus problem, decision, and outcome
+- Case-file index: compact thumbnail with a full-resolution image action, concise context, two proof points, and a dedicated case-study link
 - Capability map: capability connected directly to project evidence
 - CV chooser: language first, then explicit view/download actions
 - Mobile jump menu: all destinations remain available at every width
