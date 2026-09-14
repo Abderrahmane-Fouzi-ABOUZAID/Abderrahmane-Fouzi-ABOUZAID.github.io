@@ -104,7 +104,7 @@ document.querySelectorAll('[data-year]').forEach((node) => {
 
 const screenshotLinks = document.querySelectorAll('.project-thumb, .case-visual a[href]');
 
-if (screenshotLinks.length && typeof HTMLDialogElement !== 'undefined') {
+if (screenshotLinks.length && typeof HTMLDialogElement !== 'undefined' && typeof HTMLDialogElement.prototype.showModal === 'function') {
   const viewer = document.createElement('dialog');
   viewer.className = 'screenshot-viewer';
   viewer.id = 'screenshot-viewer';
@@ -152,7 +152,7 @@ if (screenshotLinks.length && typeof HTMLDialogElement !== 'undefined') {
       if (!thumbnail) return;
       event.preventDefault();
       opener = link;
-      fullImage.src = link.href;
+      fullImage.src = thumbnail.currentSrc || thumbnail.src;
       fullImage.alt = thumbnail.alt;
       title.textContent = link.closest('.project-row')?.querySelector('h3')?.textContent
         || document.querySelector('.case-hero h1')?.textContent || 'Project screenshot';

@@ -729,6 +729,10 @@ body.screenshot-open {
   overflow: hidden;
 }
 
+body:has(.screenshot-fallback:target) {
+  overflow: hidden;
+}
+
 .screenshot-viewer {
   width: min(1280px, calc(100% - 24px));
   height: calc(100% - 24px);
@@ -744,6 +748,20 @@ body.screenshot-open {
 }
 
 .screenshot-viewer[open] {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.screenshot-fallback {
+  position: fixed;
+  z-index: 100;
+  inset: 12px;
+  display: none;
+  margin: auto;
+  box-shadow: 0 0 0 100vmax oklch(0.12 0.021 242 / 0.94);
+}
+
+.screenshot-fallback:target {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
 }
@@ -768,17 +786,22 @@ body.screenshot-open {
   line-height: 1.4;
 }
 
-.screenshot-toolbar button {
+.screenshot-toolbar button,
+.screenshot-toolbar .screenshot-back {
+  display: inline-flex;
+  align-items: center;
   min-height: 44px;
   padding: 8px 12px;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
   background: var(--panel);
   font-weight: 700;
+  text-decoration: none;
   cursor: pointer;
 }
 
-.screenshot-toolbar button:hover {
+.screenshot-toolbar button:hover,
+.screenshot-toolbar .screenshot-back:hover {
   background: var(--panel-strong);
 }
 

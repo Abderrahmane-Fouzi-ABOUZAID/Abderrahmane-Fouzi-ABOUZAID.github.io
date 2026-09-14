@@ -13,7 +13,7 @@
     <meta property="og:description" content="Turning 104 security controls into assignable campaigns, measurable maturity, and controlled evidence.">
     <meta property="og:image" content="https://abderrahmane-fouzi-abouzaid.github.io/assets/og-cover.png">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css?v=screenshot-return-2">
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -40,8 +40,8 @@
         </dl>
       </header>
 
-      <figure class="case-visual shell">
-        <a href="../assets/dnssi-compass.webp" target="_blank" rel="noopener noreferrer" aria-label="Open the full DNSSI Compass screenshot in a new tab">
+      <figure class="case-visual shell" id="project-image">
+        <a href="#full-screenshot" aria-label="Open the full DNSSI Compass screenshot">
           <img src="../assets/dnssi-compass.webp" width="2160" height="1500" alt="DNSSI Compass compliance summary showing maturity and chapter-level results">
         </a>
         <figcaption>Compliance synthesis view. Select the image to inspect the full screenshot.</figcaption>
@@ -104,6 +104,16 @@
     </main>
 
     <footer class="site-footer"><div class="shell footer-inner"><span>© <span data-year></span> Abderrahmane Fouzi ABOUZAID</span><span class="footer-links"><a href="../index.html#contact">Contact</a></span></div></footer>
-    <script src="../script.js" defer></script>
+    <section class="screenshot-viewer screenshot-fallback" id="full-screenshot" role="region" aria-labelledby="full-screenshot-title">
+      <div class="screenshot-toolbar">
+        <a class="screenshot-back" href="#project-image">← Back to case study</a>
+        <h2 class="screenshot-title" id="full-screenshot-title">DNSSI Compass</h2>
+      </div>
+      <div class="screenshot-stage" tabindex="0" role="region" aria-label="Full screenshot">
+        <img src="../assets/dnssi-compass.webp" width="2160" height="1500" alt="DNSSI Compass compliance summary showing maturity and chapter-level results">
+      </div>
+    </section>
+
+    <script src="../script.js?v=screenshot-return-2" defer></script>
   </body>
 </html>
