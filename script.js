@@ -101,3 +101,82 @@ if ('IntersectionObserver' in window && observedSections.length) {
 document.querySelectorAll('[data-year]').forEach((node) => {
   node.textContent = new Date().getFullYear();
 });
+
+const screenshotLinks = document.querySelectorAll('.project-thumb, .case-visual a[href]');
+
+if (screenshotLinks.length && typeof HTMLDialogElement !== 'undefined') {
+  const viewer = document.createElement('dialog');
+  viewer.className = 'screenshot-viewer';
+  viewer.id = 'screenshot-viewer';
+  viewer.setAttribute('aria-labelledby', 'screenshot-title');
+  viewer.innerHTML = `
+    <div class="screenshot-toolbar">
+      <button type="button" class="screenshot-back" autofocus>← Back to projects</button>
+      <h2 class="screenshot-title" id="screenshot-title"></h2>
+      <button type="button" class="screenshot-zoom" aria-pressed="false">Zoom in</button>
+    </div>
+    <div class="screenshot-stage" tabindex="0" role="region" aria-label="Screenshot, scroll to explore when zoomed">
+      <img alt="">
+    </div>`;
+  document.body.append(viewer);
+
+  const backButton = viewer.querySelector('.screenshot-back');
+  const zoomButton = viewer.querySelector('.screenshot-zoom');
+  const title = viewer.querySelector('.screenshot-title');
+  const stage = viewer.querySelector('.screenshot-stage');
+  const fullImage = stage.querySelector('img');
+  let opener;
+
+  function setScreenshotZoom(zoomed) {
+    const imageWidth = fullImage.naturalWidth || stage.clientWidth;
+    const imageHeight = fullImage.naturalHeight || stage.clientHeight;
+    const fittedWidth = Math.min(stage.clientWidth, stage.clientHeight * imageWidth / imageHeight);
+    fullImage.style.width = zoomed ? `${Math.max(imageWidth, fittedWidth * 1.5)}px` : '';
+    stage.classList.toggle('is-zoomed', zoomed);
+    zoomButton.setAttribute('aria-pressed', String(zoomed));
+    zoomButton.textContent = zoomed ? 'Fit to screen' : 'Zoom in';
+    stage.scrollTo(0, 0);
+  }
+
+  screenshotLinks.forEach((link) => {
+    link.setAttribute('aria-haspopup', 'dialog');
+    link.setAttribute('aria-controls', viewer.id);
+    link.setAttribute('aria-label', link.getAttribute('aria-label')?.replace(' in a new tab', '') || 'View full screenshot');
+    const label = link.querySelector('span');
+    if (label) label.textContent = 'Full screenshot';
+
+    link.addEventListener('click', (event) => {
+      // Keep the usual link behavior for opening a separate tab intentionally.
+      if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      const thumbnail = link.querySelector('img');
+      if (!thumbnail) return;
+      event.preventDefault();
+      opener = link;
+      fullImage.src = link.href;
+      fullImage.alt = thumbnail.alt;
+      title.textContent = link.closest('.project-row')?.querySelector('h3')?.textContent
+        || document.querySelector('.case-hero h1')?.textContent || 'Project screenshot';
+      backButton.textContent = link.closest('.project-row') ? '← Back to projects' : '← Back to case study';
+      setScreenshotZoom(false);
+      document.body.classList.add('screenshot-open');
+      viewer.showModal();
+    });
+  });
+
+  backButton.addEventListener('click', () => viewer.close());
+  zoomButton.addEventListener('click', () => {
+    setScreenshotZoom(zoomButton.getAttribute('aria-pressed') !== 'true');
+  });
+  viewer.addEventListener('click', (event) => {
+    if (event.target !== viewer) return;
+    const bounds = viewer.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) {
+      viewer.close();
+    }
+  });
+  viewer.addEventListener('close', () => {
+    document.body.classList.remove('screenshot-open');
+    setScreenshotZoom(false);
+    opener?.focus({ preventScroll: true });
+  });
+}
