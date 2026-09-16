@@ -1,0 +1,93 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage[a4paper,top=1.05cm,bottom=1.05cm,left=1.25cm,right=1.25cm]{geometry}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{microtype}
+\usepackage{lmodern}
+
+\definecolor{Ink}{HTML}{17212B}
+\definecolor{Signal}{HTML}{A65B16}
+\definecolor{Quiet}{HTML}{485866}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=Signal,
+  pdftitle={Resume -- Abderrahmane Fouzi ABOUZAID -- Cybersecurity},
+  pdfsubject={GRC, compliance, application security and secure automation},
+  pdfauthor={Abderrahmane Fouzi ABOUZAID}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.15em,itemsep=0pt,topsep=1.5pt,parsep=0pt}
+\titleformat{\section}{\bfseries\color{Ink}\fontsize{10.6}{12}\selectfont}{}{0pt}{}
+\titlespacing*{\section}{0pt}{4.2pt}{2.2pt}
+\newcommand{\Rule}{\vspace{1pt}\color{Signal}\rule{\linewidth}{0.55pt}\color{Ink}}
+\newcommand{\CVEntry}[4]{%
+  \textbf{#1}\hfill\textbf{#2}\\[-1pt]
+  \textcolor{Quiet}{#3}\hfill\textcolor{Quiet}{#4}\par
+}
+\newcommand{\Project}[2]{\textbf{#1} #2\par}
+
+\begin{document}
+\color{Ink}
+
+{\fontsize{17}{19}\selectfont\bfseries Abderrahmane Fouzi ABOUZAID}\par
+\vspace{1pt}
+{\fontsize{10.3}{12}\selectfont\color{Signal}\bfseries
+Cybersecurity Engineering Student | GRC, Compliance \& Application Security}\par
+\vspace{3pt}
+\begin{tabularx}{\linewidth}{@{}Xr@{}}
+\href{mailto:abderrahmaneabouzaid@gmail.com}{abderrahmaneabouzaid@gmail.com} & Rabat, Morocco \\
+\href{tel:+2126685252273}{+212 668 525 2273} & Born 28 December 2005 \\
+\href{https://abderrahmane-fouzi-abouzaid.github.io/}{Online portfolio} & Moroccan nationality
+\end{tabularx}
+\Rule
+
+\section*{Profile}
+Computer engineering student specializing in cybersecurity, with experience in Royal Air Maroc's information security team. I combine governance, risk and compliance (DNSSI, ISO 27001/27002, NIST CSF and GDPR) with secure full-stack development, web penetration testing, and responsible AI automation. I design operational systems with clear trust boundaries and reviewable evidence.
+
+\section*{Experience}
+\CVEntry{Cybersecurity Intern | GRC \& Application Security}{Jun 2026 -- Aug 2026}{Royal Air Maroc (RAM), Information Systems Department}{}
+Built DNSSI compliance tools, applied security frameworks, conducted authorized penetration tests in an isolated lab environment, and produced audit and remediation reports.
+
+\section*{Education}
+\CVEntry{Computer Engineering Degree | Engineering Cycle}{Sep 2025 -- Jun 2028}{UM6P College of Computing}{Rabat Campus}
+\CVEntry{Computer Engineering Degree | Integrated Preparatory Cycle}{Sep 2023 -- Jun 2025}{UM6P College of Computing}{Benguerir Campus}
+\CVEntry{Baccalaureate in Mathematics and Science}{Sep 2021 -- May 2022}{Lyc\'ee Andr\'e Gide}{Oujda}
+
+\section*{Awards}
+\textbf{3rd place | PwC x ACC Consulting Case Game (Digital Transformation).}
+Developed a five-year roadmap for a Moroccan renewable-energy operator covering data governance, cybersecurity, IoT, edge computing, AI and change management.\\[-1pt]
+\textbf{2nd place | Capture The Flag (CTF), 1337 x Elitesec.}
+Solved advanced challenges in system exploitation, cryptography and digital forensics.
+
+\section*{Professional Development}
+\CVEntry{Claude Cowork Automation | Claude Academy}{15 Sep 2026}{Introduction to Claude Cowork | Course completion badge}{}
+Configured Claude Cowork to automate operational tasks including scheduling emails and calendar appointments, while reviewing connector permissions and applying least-privilege access to reduce unnecessary exposure of sensitive organisational data.
+
+\section*{Projects}
+\Project{LEAP | Project Monitoring and Analytics Platform, developed for OCP Solutions.}{Full-stack platform integrated with GitHub and Jira. An LLM classifies code-review comment severity; a scoring engine generates quality indicators, alerts and automated reports. Stack: FastAPI, Python, relational database, modern frontend and secure authentication.}
+\vspace{1pt}
+\Project{DNSSI Audit and Self-Assessment Platform | Royal Air Maroc.}{Multi-user application covering 14 chapters, 31 objectives and 104 controls, with maturity scoring, gap tracking, chapter assignments, and CSV/Excel/PDF exports. Security includes administrator/assessor roles, revocable HttpOnly sessions, CSRF protection, bcrypt and server-side access controls. Stack: Next.js 16, React 19, TypeScript, Tailwind CSS 4, FastAPI, SQLAlchemy and SQLite/PostgreSQL.}
+
+\section*{Technical Skills}
+\textbf{GRC \& audit:} DNSSI, ISO/IEC 27001/27002, NIST CSF 2.0, GDPR, compliance auditing, risk analysis, OWASP Top 10, reporting.\\[-1pt]
+\textbf{Offensive security:} Burp Suite, Nmap, Hashcat, Metasploit, Gobuster, sqlmap, mitmproxy.\\[-1pt]
+\textbf{Development \& data:} Python, TypeScript, JavaScript, C/C++, Java, SQL, FastAPI, React, Next.js, REST APIs, Tailwind CSS, PostgreSQL, SQLite, Git/GitHub, Linux, Docker.
+
+\section*{Languages \& Core Strengths}
+\textbf{Languages:} English (professional), French (fluent), Arabic (native). \quad
+\textbf{Strengths:} Analytical thinking, rigor, autonomy, clear communication, teamwork, fast learning, professional ethics and a results-oriented mindset.
+
+\end{document}

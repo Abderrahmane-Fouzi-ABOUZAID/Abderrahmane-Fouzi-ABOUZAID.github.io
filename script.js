@@ -133,7 +133,7 @@ document.querySelectorAll("[data-year]").forEach((node) => {
 });
 
 const screenshotLinks = document.querySelectorAll(
-  ".project-thumb, .case-visual a[href]",
+  ".project-thumb, .case-visual a[href], .credential-visual",
 );
 if (
   screenshotLinks.length &&
@@ -221,11 +221,14 @@ if (
       fullImage.alt = thumbnail.alt;
       title.textContent =
         link.closest(".project-row")?.querySelector("h3")?.textContent ||
+        link.closest(".credential-record")?.querySelector("h3")?.textContent ||
         document.querySelector(".case-hero h1")?.textContent ||
         "Project screenshot";
       backButton.textContent = link.closest(".project-row")
         ? "← Back to projects"
-        : "← Back to case study";
+        : link.closest(".credential-record")
+          ? "← Back to credential"
+          : "← Back to case study";
       viewer.showModal();
       document.body.classList.add("screenshot-open");
       setScreenshotZoom(false);
@@ -247,6 +250,9 @@ if (
       event.clientY > bounds.bottom
     )
       viewer.close();
+  });
+  viewer.addEventListener("cancel", () => {
+    document.body.classList.remove("screenshot-open");
   });
   viewer.addEventListener("close", () => {
     document.body.classList.remove("screenshot-open");

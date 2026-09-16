@@ -8,18 +8,11 @@
         {
           "id": "aria-valid-attr-value",
           "targets": [
-            [
-              "a[href$=\"#screenshot-dnssi\"]"
-            ],
-            [
-              "a[href$=\"#screenshot-academy\"]"
-            ],
-            [
-              "a[href$=\"#screenshot-leap\"]"
-            ],
-            [
-              "a[href$=\"#screenshot-medisphere\"]"
-            ]
+            ["a[href$=\"#screenshot-dnssi\"]"],
+            ["a[href$=\"#screenshot-academy\"]"],
+            ["a[href$=\"#screenshot-leap\"]"],
+            ["a[href$=\"#screenshot-medisphere\"]"],
+            [".credential-visual"]
           ]
         }
       ]
@@ -31,18 +24,11 @@
         {
           "id": "aria-valid-attr-value",
           "targets": [
-            [
-              "a[href$=\"#screenshot-dnssi\"]"
-            ],
-            [
-              "a[href$=\"#screenshot-academy\"]"
-            ],
-            [
-              "a[href$=\"#screenshot-leap\"]"
-            ],
-            [
-              "a[href$=\"#screenshot-medisphere\"]"
-            ]
+            ["a[href$=\"#screenshot-dnssi\"]"],
+            ["a[href$=\"#screenshot-academy\"]"],
+            ["a[href$=\"#screenshot-leap\"]"],
+            ["a[href$=\"#screenshot-medisphere\"]"],
+            [".credential-visual"]
           ]
         }
       ]
@@ -53,11 +39,7 @@
       "manualReview": [
         {
           "id": "aria-valid-attr-value",
-          "targets": [
-            [
-              "a[href$=\"#full-screenshot\"]"
-            ]
-          ]
+          "targets": [["a[href$=\"#full-screenshot\"]"]]
         }
       ]
     },
@@ -67,11 +49,7 @@
       "manualReview": [
         {
           "id": "aria-valid-attr-value",
-          "targets": [
-            [
-              "a[href$=\"#full-screenshot\"]"
-            ]
-          ]
+          "targets": [["a[href$=\"#full-screenshot\"]"]]
         }
       ]
     },
@@ -81,11 +59,7 @@
       "manualReview": [
         {
           "id": "aria-valid-attr-value",
-          "targets": [
-            [
-              "a[href$=\"#full-screenshot\"]"
-            ]
-          ]
+          "targets": [["a[href$=\"#full-screenshot\"]"]]
         }
       ]
     },
@@ -95,11 +69,7 @@
       "manualReview": [
         {
           "id": "aria-valid-attr-value",
-          "targets": [
-            [
-              "a[href$=\"#full-screenshot\"]"
-            ]
-          ]
+          "targets": [["a[href$=\"#full-screenshot\"]"]]
         }
       ]
     },
@@ -109,11 +79,7 @@
       "manualReview": [
         {
           "id": "aria-valid-attr-value",
-          "targets": [
-            [
-              "a[href$=\"#full-screenshot\"]"
-            ]
-          ]
+          "targets": [["a[href$=\"#full-screenshot\"]"]]
         }
       ]
     },
@@ -123,11 +89,7 @@
       "manualReview": [
         {
           "id": "aria-valid-attr-value",
-          "targets": [
-            [
-              "a[href$=\"#full-screenshot\"]"
-            ]
-          ]
+          "targets": [["a[href$=\"#full-screenshot\"]"]]
         }
       ]
     },
@@ -183,18 +145,11 @@
         {
           "id": "aria-valid-attr-value",
           "targets": [
-            [
-              "a[href$=\"#screenshot-dnssi\"]"
-            ],
-            [
-              "a[href$=\"#screenshot-academy\"]"
-            ],
-            [
-              "a[href$=\"#screenshot-leap\"]"
-            ],
-            [
-              "a[href$=\"#screenshot-medisphere\"]"
-            ]
+            ["a[href$=\"#screenshot-dnssi\"]"],
+            ["a[href$=\"#screenshot-academy\"]"],
+            ["a[href$=\"#screenshot-leap\"]"],
+            ["a[href$=\"#screenshot-medisphere\"]"],
+            [".credential-visual"]
           ]
         }
       ]
@@ -210,7 +165,7 @@
   "interactions": [
     "Skip link; mobile focus loop includes close button; Escape; destination focus; desktop resize",
     "CV target sizes, PDF responses, Escape, focus departure",
-    "All seven screenshot entry points: fit, zoom, Escape, focus restoration",
+    "All eight image entry points: fit, zoom, Escape, focus restoration",
     "Screenshot load failure has a readable status and working exit",
     "Reduced motion and forced-color focus",
     "No-JavaScript screenshot return and CV chooser"

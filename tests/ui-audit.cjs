@@ -259,7 +259,9 @@ async function capture(page, name) {
       "/projects/leap.html",
     ]) {
       await page.goto(baseURL + route);
-      const links = page.locator(".project-thumb, .case-visual a[href]");
+      const links = page.locator(
+        ".project-thumb, .case-visual a[href], .credential-visual",
+      );
       for (const opener of await links.all()) {
         await opener.click();
         const dialog = page.locator("dialog");
@@ -295,7 +297,7 @@ async function capture(page, name) {
       }
     }
     report.interactions.push(
-      "All seven screenshot entry points: fit, zoom, Escape, focus restoration",
+      "All eight image entry points: fit, zoom, Escape, focus restoration",
     );
 
     await page.goto(baseURL);
@@ -356,7 +358,7 @@ async function capture(page, name) {
         await geometry(fallback, `No JavaScript: ${route} at ${width}`);
         assert.equal(
           await fallback.locator(".nav-links a:visible").count(),
-          route === "/404.html" ? 0 : 5,
+          route === "/404.html" ? 0 : 6,
         );
         report.noJavaScript++;
       }
