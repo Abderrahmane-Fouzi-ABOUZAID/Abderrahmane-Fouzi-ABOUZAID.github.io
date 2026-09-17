@@ -181,7 +181,7 @@ Automated accessibility & 19 scans passed with zero automated violations: 16 pag
 JavaScript disabled & 16 page/size combinations passed, together with navigation, CV and screenshot fallback paths. \\
 Keyboard and interaction lifecycle & Skip link, menu loop and dismissal, destination focus, resize, CV dismissal, screenshot fit/zoom, load failure and return focus. \\
 Local document graph & 104 local links checked; no missing file or fragment destinations. \\
-Image declarations & All 16 declarations checked against actual dimensions and nonempty alternatives. \\
+Image declarations & All 17 declarations checked against actual dimensions and nonempty alternatives. \\
 Contrast & Quiet text/panel: 6.43:1; interactive border/panel: 4.04:1. \\
 Font loading & Normal, delayed and blocked font conditions each recorded zero layout shift in the instrumented local page load. \\
 Motion and high contrast & Reduced-motion scrolling/transitions and forced-color focus checked. \\
@@ -192,7 +192,7 @@ Source integrity & JavaScript syntax, formatting and whitespace diff checks. \\
 A supplementary sweep checked 202 intermediate viewport widths across the homepage and the long-title Medisphere case. No document overflow was detected. Emulated touch navigation and a 640-by-320px landscape menu also passed. These supplementary checks used Chromium and do not replace physical-device validation.
 
 \paragraph{Manual review of automated results.}
-Axe marks the controls relationship of unopened image dialogs as needing review. The referenced dialog is created before its launcher is enhanced, has the matching unique ID, and opens successfully from all eight launch points. The open-dialog scan has no such unresolved reference. This is a verified hidden-target relationship, not a missing ID.
+Axe marks the controls relationship of unopened image dialogs as needing review. The referenced dialog is created before its launcher is enhanced, has the matching unique ID, and opens successfully from all nine launch points. The open-dialog scan has no such unresolved reference. This is a verified hidden-target relationship, not a missing ID.
 
 \paragraph{Evidence boundary.}
 The automated run uses Chromium through Playwright. It does not constitute real-device testing on iOS Safari or Android, a screen-reader certification, or field Core Web Vitals measurement. The 320px checks exercise narrow reflow; they do not claim literal browser-zoom coverage on every device. Screenshots were inspected for the homepage and DNSSI case at mobile, tablet and desktop sizes. Content hidden inside bitmap screenshots cannot have its contrast or semantics repaired by website CSS.

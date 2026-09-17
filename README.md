@@ -5,7 +5,7 @@ Evidence-led portfolio for a cybersecurity engineering student focused on securi
 ## Information architecture
 
 - Recruiter-first homepage with selected work, experience, education, results, capabilities, and contact information
-- Verified professional-development evidence, including the Claude Cowork course completion badge
+- Verified professional-development evidence, including Google cybersecurity and Claude Cowork course credentials
 - Dedicated, shareable case studies for DNSSI Compass, Cybersecurity Standards Academy, LEAP, Medisphere, the PwC consulting case, and the graph-based simulation
 - Explicit collaborator credits and public/private evidence labels
 - French and English CV view and download actions

@@ -297,7 +297,7 @@ async function capture(page, name) {
       }
     }
     report.interactions.push(
-      "All eight image entry points: fit, zoom, Escape, focus restoration",
+      "All nine image entry points: fit, zoom, Escape, focus restoration",
     );
 
     await page.goto(baseURL);

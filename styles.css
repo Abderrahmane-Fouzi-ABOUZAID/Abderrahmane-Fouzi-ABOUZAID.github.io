@@ -795,11 +795,19 @@ summary {
 .result-item p {
   color: var(--muted);
 }
+.credential-list {
+  display: grid;
+  gap: var(--space-16);
+}
 .credential-record {
   display: grid;
   grid-template-columns: minmax(18rem, 0.9fr) minmax(0, 1.1fr);
   gap: var(--layout-gap);
   align-items: center;
+}
+.credential-record + .credential-record {
+  padding-top: var(--space-16);
+  border-top: 1px solid var(--line-soft);
 }
 .credential-record figure {
   margin: 0;
@@ -868,6 +876,18 @@ summary {
   color: var(--paper);
   font-size: var(--text-small);
   line-height: 1.5;
+}
+.credential-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  margin-top: var(--space-5);
+}
+.credential-action {
+  padding-block: var(--space-2);
+  color: var(--assurance);
+  font-weight: 800;
+  text-decoration-color: currentColor;
 }
 .capability-row {
   display: grid;

@@ -12,7 +12,12 @@
             ["a[href$=\"#screenshot-academy\"]"],
             ["a[href$=\"#screenshot-leap\"]"],
             ["a[href$=\"#screenshot-medisphere\"]"],
-            [".credential-visual"]
+            [
+              ".credential-record:nth-child(1) > figure > .credential-visual[aria-haspopup=\"dialog\"][aria-controls=\"screenshot-viewer\"]"
+            ],
+            [
+              ".credential-record:nth-child(2) > figure > .credential-visual[aria-haspopup=\"dialog\"][aria-controls=\"screenshot-viewer\"]"
+            ]
           ]
         }
       ]
@@ -28,7 +33,12 @@
             ["a[href$=\"#screenshot-academy\"]"],
             ["a[href$=\"#screenshot-leap\"]"],
             ["a[href$=\"#screenshot-medisphere\"]"],
-            [".credential-visual"]
+            [
+              ".credential-record:nth-child(1) > figure > .credential-visual[aria-haspopup=\"dialog\"][aria-controls=\"screenshot-viewer\"]"
+            ],
+            [
+              ".credential-record:nth-child(2) > figure > .credential-visual[aria-haspopup=\"dialog\"][aria-controls=\"screenshot-viewer\"]"
+            ]
           ]
         }
       ]
@@ -149,7 +159,12 @@
             ["a[href$=\"#screenshot-academy\"]"],
             ["a[href$=\"#screenshot-leap\"]"],
             ["a[href$=\"#screenshot-medisphere\"]"],
-            [".credential-visual"]
+            [
+              ".credential-record:nth-child(1) > figure > .credential-visual[aria-haspopup=\"dialog\"][aria-controls=\"screenshot-viewer\"]"
+            ],
+            [
+              ".credential-record:nth-child(2) > figure > .credential-visual[aria-haspopup=\"dialog\"][aria-controls=\"screenshot-viewer\"]"
+            ]
           ]
         }
       ]
@@ -165,7 +180,7 @@
   "interactions": [
     "Skip link; mobile focus loop includes close button; Escape; destination focus; desktop resize",
     "CV target sizes, PDF responses, Escape, focus departure",
-    "All eight image entry points: fit, zoom, Escape, focus restoration",
+    "All nine image entry points: fit, zoom, Escape, focus restoration",
     "Screenshot load failure has a readable status and working exit",
     "Reduced motion and forced-color focus",
     "No-JavaScript screenshot return and CV chooser"
