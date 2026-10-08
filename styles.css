@@ -843,7 +843,7 @@ summary {
   font-weight: 800;
   letter-spacing: 0.04em;
 }
-.credential-copy h3 {
+.credential-copy :is(h3, h4) {
   margin-top: var(--space-3);
   font-size: var(--text-card);
   letter-spacing: -0.025em;
@@ -888,6 +888,51 @@ summary {
   color: var(--assurance);
   font-weight: 800;
   text-decoration-color: currentColor;
+}
+.credential-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-6);
+}
+.credential-heading > div {
+  flex: 1 1 14rem;
+  min-width: 0;
+}
+.credential-badge {
+  flex: 0 0 var(--space-32);
+  border-radius: var(--radius);
+}
+.credential-badge img {
+  width: var(--space-32);
+}
+.credential-details {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+.credential-details > summary {
+  padding: var(--space-4);
+  border-block: 1px solid var(--line);
+  color: var(--assurance);
+  font-weight: 800;
+  list-style-position: inside;
+}
+.credential-details > summary:hover {
+  background: var(--panel);
+}
+.credential-course-list {
+  display: grid;
+  gap: var(--space-12);
+  padding-top: var(--space-8);
+}
+.credential-course {
+  gap: var(--space-8);
+}
+.credential-course + .credential-course {
+  padding-top: var(--space-12);
+}
+.credential-course .credential-copy :is(h3, h4) {
+  font-size: 1.25rem;
 }
 .capability-row {
   display: grid;

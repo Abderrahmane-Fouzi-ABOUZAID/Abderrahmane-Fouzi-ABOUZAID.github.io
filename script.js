@@ -221,7 +221,7 @@ if (
       fullImage.alt = thumbnail.alt;
       title.textContent =
         link.closest(".project-row")?.querySelector("h3")?.textContent ||
-        link.closest(".credential-record")?.querySelector("h3")?.textContent ||
+        link.closest(".credential-record")?.querySelector("h3, h4")?.textContent ||
         document.querySelector(".case-hero h1")?.textContent ||
         "Project screenshot";
       backButton.textContent = link.closest(".project-row")
